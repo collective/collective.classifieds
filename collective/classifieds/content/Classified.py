@@ -109,6 +109,7 @@ class Classified(BaseContent, BrowserDefaultMixin):
         """checks if the classified has a image"""
         if self.getImage():
             return True
+        
         return False
     
     def getImageTile(self, **kwargs):

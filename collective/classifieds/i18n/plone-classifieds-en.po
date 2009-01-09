@@ -50,7 +50,7 @@ msgid "classifieds_classifieds"
 msgstr "Classifieds"
 
 msgid "classifieds_you_searched_on"
-msgstr "You search on"
+msgstr "You searched on"
 
 msgid "classifieds_resultsfound"
 msgstr "results found"
@@ -134,8 +134,9 @@ msgstr "Delete this classified"
 msgid "classifieds_classified_has_been_deleted"
 msgstr "has been deleted."
 
+msgid "classifieds_invalid_float"
+msgstr "Please enter a valid numeric value"
+
 msgid "classifieds_classifiedscategories_amount_label"
 msgstr "Amount"
 
-msgid "classifieds_invalid_phonenumber"
-msgstr "You entered an invalid phonenumber"

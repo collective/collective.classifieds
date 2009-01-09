@@ -146,7 +146,7 @@
                             </tbody>
                         </table>
                         <!-- show batch/paging navigation -->
-                        <span metal:use-macro="here/all_classifieds_batch_macros/macros/navigation" />
+                        <span metal:use-macro="here/batch_macros/macros/navigation" />
                         
                     </div>
                 <!-- end search results -->

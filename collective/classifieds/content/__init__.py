@@ -5,8 +5,8 @@ __docformat__ = 'plaintext'
 # Subpackages
 from Products.validation import validation
 
-from Validators import PhoneValidator
-validation.register(PhoneValidator('isPhoneNumber'))
+from Validators import FloatValidator
+validation.register(FloatValidator('isFloat'))
 
 # Additional
 

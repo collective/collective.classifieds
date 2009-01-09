@@ -113,8 +113,6 @@ msgstr "Categoriën in"
 msgid "classifieds_classifiedsclassified_label_categories_in_this_category"
 msgstr "Subcategoriën in de categorie"
 
-
-
 msgid "classifieds_classifiedscategories_label"
 msgstr "Categoriën"
 
@@ -136,8 +134,9 @@ msgstr "Verwijder deze advertentie"
 msgid "classifieds_classified_has_been_deleted"
 msgstr "is verwijderd."
 
+msgid "classifieds_invalid_float"
+msgstr "Geef een numerieke waarde op"
+
 msgid "classifieds_classifiedscategories_amount_label"
 msgstr "Aantal"
 
-msgid "classifieds_invalid_phonenumber"
-msgstr "Ongeldig telefonummer opgegeven"

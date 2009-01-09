@@ -85,9 +85,10 @@ msgstr "All classifieds created by"
 msgid "classifieds_classifieds_all_created_by_header"
 msgstr "All classifieds created by"
 
+msgid "classifieds_invalid_float"
+msgstr "Please enter a valid numeric value"
+
 msgid "classifieds_results"
 msgstr "Searchresults"
 
-msgid "classifieds_invalid_phonenumber"
-msgstr "You entered an invalid phonenumber"
 

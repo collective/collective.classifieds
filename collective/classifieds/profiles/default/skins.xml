@@ -12,7 +12,7 @@
  
  <skin-path name="*">
   <layer insert-after="custom" 
-         name="facebook_templates"/>
+         name="classifieds_templates"/>
  </skin-path> 
  
 </object>

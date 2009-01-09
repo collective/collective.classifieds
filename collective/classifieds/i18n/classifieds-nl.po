@@ -85,9 +85,11 @@ msgstr "alle advertenties aangemaakt door"
 msgid "classifieds_classifieds_all_created_by_header"
 msgstr "Alle advertenties aangemaakt door"
 
+msgid "classifieds_invalid_float"
+msgstr "Geef een numerieke waarde op"
+
 msgid "classifieds_results"
 msgstr "Zoekresultaten"
 
-msgid "classifieds_invalid_phonenumber"
-msgstr "Ongeldig telefonummer opgegeven"
+
 
