@@ -6,13 +6,11 @@
 	float: right;
 	padding: 10px;
     background-color: #EEF3F5;
-    
 }
 
 .classified_image {
 	padding-right: 10px;
     vertical-align: top;
-
 }
 
 .classified_image img {
@@ -27,5 +25,4 @@
 
 img.image_tile {
 	border:1px solid #EAE8E8;
-	
 }

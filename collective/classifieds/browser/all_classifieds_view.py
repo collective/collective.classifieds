@@ -69,9 +69,9 @@ class all_classifieds_view(BrowserView):
                 tmpresults = searchstring
 
             if tmpresults != '*':
-                query = {'portal_type' : ["Classified"], "SearchableText" : tmpresults, 'sort_on' : sort_on, "sort_order" : sort_order };
+                query = {'portal_type' : ["Classified"], "SearchableText" : tmpresults, 'sort_on' : sort_on, "sort_order" : sort_order }
                 query['path'] = {'query':'/'.join(self.context.getPhysicalPath())}
-                results = CatalogSearch(self.context, query)();
+                results = CatalogSearch(self.context, query)()
                     
                 if len(results) > 0:
                     return results

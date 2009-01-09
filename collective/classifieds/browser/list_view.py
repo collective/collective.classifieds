@@ -64,7 +64,7 @@ class list_view(BrowserView):
             if tmpresults != '*':
                 query = {'portal_type' : ["Classified"], "SearchableText" : tmpresults, 'sort_on' : sort_on, "sort_order" : sort_order };
                 query['path'] = {'query':'/'.join(self.context.getPhysicalPath())}
-                results = CatalogSearch(self.context, query)();
+                results = CatalogSearch(self.context, query)()
                 
                 if len(results) > 0:
                     return results;
@@ -73,7 +73,7 @@ class list_view(BrowserView):
     def getNumberOfClassifieds(self, item):
         """Returns number of classifieds in the category"""
         path = '/%s' % item.getPath()
-        portal_catalog = getToolByName(self.context, "portal_catalog");
+        portal_catalog = getToolByName(self.context, "portal_catalog")
         query = {'portal_type' : ["Classified"]}
         query['path'] = {'query':path}
         query['depth'] = 1

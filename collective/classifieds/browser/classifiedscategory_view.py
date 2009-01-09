@@ -36,13 +36,12 @@ class classifiedscategory_view(BrowserView):
         sort_order = ""
         searchstring = ""
         sort_on = "sortable_title"
-
         
 
         if self.request.form.get('sort_on'):
             sort_on = self.request.form.get('sort_on')
         if self.request.form.get('sort_order'):
-            sort_order = self.request.form.get('sort_order');
+            sort_order = self.request.form.get('sort_order')
         if self.request.form.get('frm_searchString') and len(self.request.form.get('frm_searchString')) > 0:
             results = []
             searchstring = self.request.form.get('frm_searchString')
@@ -57,11 +56,11 @@ class classifiedscategory_view(BrowserView):
             else:
                 tmpresults = searchstring
             
-            query = {'portal_type' : ["Classified"], "SearchableText" : tmpresults, 'sort_on' : sort_on, 'sort_order' : sort_order};
+            query = {'portal_type' : ["Classified"], "SearchableText" : tmpresults, 'sort_on' : sort_on, 'sort_order' : sort_order}
             query['path'] = {'query':'/'.join(self.context.getPhysicalPath())}
 
 
-            results = CatalogSearch(self.context, query)();
+            results = CatalogSearch(self.context, query)()
             
                 
             if len(results) > 0:
@@ -71,7 +70,7 @@ class classifiedscategory_view(BrowserView):
     def getNumberOfClassifieds(self, item):
         """Returns number of classifieds in the category"""
         path = '/%s' % item.getPath()
-        portal_catalog = getToolByName(self.context, "portal_catalog");
+        portal_catalog = getToolByName(self.context, "portal_catalog")
         query = {'portal_type' : ["Classified"]}
         query['path'] = {'query':path}
         query['depth'] = 1
