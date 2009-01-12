@@ -1,6 +1,12 @@
 Changelog
 =========
 
+0.3 - Alpha
+----------------
+
+* Fixed bug/issue skins.xml > skins directory
+
+
 0.2 - Alpha
 ----------------
 
@@ -15,4 +21,3 @@ Changelog
 ----------------
 
 * Initial release
-
