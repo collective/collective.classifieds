@@ -19,7 +19,6 @@ from Products.CMFCore import utils as cmfutils
 from Products.CMFPlone.utils import ToolInit
 from config import *
 
-DirectoryView.registerDirectory('skins', product_globals)
 
 def initialize(context):
     """initialize product (called by zope)"""
