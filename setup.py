@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '0.2'
+version = '0.4'
 
 setup(name='collective.classifieds',
       version=version,
@@ -17,7 +17,7 @@ setup(name='collective.classifieds',
       keywords='classifieds sales intranet',
       author='Four Digits (ralph@fourdigits.nl)',
       author_email='ralph@fourdigits.nl',
-      url='http://svn.plone.org/svn/plone/plone.example',
+      url='http://www.plone.org/products/classifieds',
       license='GPL',
       packages=find_packages(exclude=['ez_setup']),
       namespace_packages=['collective'],

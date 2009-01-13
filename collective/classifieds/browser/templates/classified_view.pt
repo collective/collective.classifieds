@@ -63,7 +63,8 @@
                                 <div tal:content="structure here/getDescription" />
                             
                                 <h3 i18n:translate="classifieds_classifiedsclassified_label_price">Price</h3>
-                                <span tal:content="context/price">price</span>
+                                <span tal:content="python:'%0.2f' % context.price" /> <br />
+                                
                         </td>
                     </tr>
                 </table>

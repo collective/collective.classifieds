@@ -113,9 +113,9 @@ class Classified(BaseContent, BrowserDefaultMixin):
         return False
     
     def getImageTile(self, **kwargs):
-        """Generate image tag using the api of the ImageField"""
+        """Get image tile url, for use in templates"""
         if self.hasImage():
-            imgtileurl = self.getImage().absolute_url(1) + '_tile'
+            imgtileurl = '/'  + self.getImage().absolute_url(1) + '_tile'
             
             return imgtileurl     
         return ''

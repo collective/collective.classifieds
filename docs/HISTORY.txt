@@ -1,6 +1,14 @@
 Changelog
 =========
 
+
+0.4 - Alpha
+----------------
+
+* Fixed tiled images bug in templates
+* Added formatting for the price values
+
+
 0.3 - Alpha
 ----------------
 

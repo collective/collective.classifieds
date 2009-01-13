@@ -138,7 +138,7 @@
                                             
                                         </td>
                                         <td>
-                                            <span tal:content="item/price">Price</span>    
+                                            <span tal:content="python:'%0.2f' % item['price']" />
                                         </td>
                                     </span>
                                 </tr>
