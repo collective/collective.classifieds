@@ -2,6 +2,12 @@ Changelog
 =========
 
 
+0.5 - Beta
+----------------
+
+* Fixed translation files
+
+
 0.4 - Alpha
 ----------------
 
