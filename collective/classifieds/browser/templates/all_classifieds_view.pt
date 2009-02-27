@@ -2,7 +2,7 @@
       lang="en"
       metal:use-macro="here/main_template/macros/master"
       i18n:domain="plone">
-<<body>
+<body>
     <div metal:fill-slot="main"
                  tal:define="results python: view.search();
                  Batch python:modules['Products.CMFPlone'].Batch;
@@ -138,7 +138,7 @@
                                             
                                         </td>
                                         <td>
-                                            <span tal:content="python:'%0.2f' % item['price']" />
+                                            <span tal:condition="python:isinstance(item['price'], float)" tal:content="python:'%0.2f' % item['price']" />
                                         </td>
                                     </span>
                                 </tr>

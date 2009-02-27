@@ -53,7 +53,7 @@ msgid "classifieds_classified_price"
 msgstr "Price"
 
 msgid "classifieds_classified_price_description"
-msgstr "Price of the classifieds"
+msgstr "Price of the classified"
 
 msgid "classifieds_classifieds"
 msgstr "Classifieds"
@@ -62,7 +62,7 @@ msgid "classifieds_you_searched_on"
 msgstr "You searched on"
 
 msgid "classifieds_resultsfound"
-msgstr "results found"
+msgstr "result(s) found"
 
 msgid "classifieds_classifieds_all_created_by"
 msgstr "All classifieds created by"
@@ -77,7 +77,7 @@ msgid "classifieds_you_searched_on"
 msgstr "You searched on"
 
 msgid "classifieds_resultsfound"
-msgstr "results found"
+msgstr "result(s) found"
 
 msgid "classifieds_classifieds_all_created_by"
 msgstr "All classifieds created by"

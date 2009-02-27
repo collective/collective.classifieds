@@ -79,8 +79,8 @@
                                                                         <td>
                                                                                 <a tal:attributes="href string:${item/getURL}" tal:content="item/Title">Name</a>
                                                                         </td>
-                                                                        <td>
-                                                                                <span tal:content="python:'%0.2f' % context.price" />
+                                                                        <td>                                
+                                                                                <span tal:condition="python:type == 'float'" tal:content="python:'%0.2f' % context.price">price</span>
                                                                         </td>
                                                                 </span>
                                                         </tr>

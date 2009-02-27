@@ -17,7 +17,10 @@ class FloatValidator:
         """
         FLOAT_RE = "^([+-]?)(?=\d|\.\d)\d*(\.\d*)?([Ee]([+-]?\d+))?$"
 
-        if re.match(FLOAT_RE,value):
-            return 1
+        if value:
+            if re.match(FLOAT_RE,value):
+                return 1
+        else:
+            return 1 
         
         return translate(u'classifieds_invalid_float', domain='classifieds', context=self)

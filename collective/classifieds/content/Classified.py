@@ -73,7 +73,8 @@ schema = Schema((
             description_msgid="classifieds_classified_price_description",
             i18n_domain='classifieds',
         ),
-        required=True,
+        validators=('isFloat',),
+        required=False,
         searchable=True,
     ),
 ),
@@ -96,10 +97,6 @@ class Classified(BaseContent, BrowserDefaultMixin):
 
     schema = Classified_schema
     
-    def getParentNodePath(self):
-        """Gets the path of the Organisatie (parent)"""
-        return self.getParentNode().getPath();
-        
     def getPath(self):
         """Gets the path of the object"""
         path = '/'.join(self.getPhysicalPath());

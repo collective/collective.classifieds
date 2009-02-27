@@ -45,10 +45,6 @@ class Classifieds(BaseBTreeFolder, BrowserDefaultMixin):
 
     schema = Classifieds_schema
 
-    def getParentNodePath(self):
-        """Gets the path of the Organisatie (parent)"""
-        return self.getParentNode().getPath();
-        
     def getPath(self):
         """Gets the path of the object"""
         path = '/'.join(self.getPhysicalPath());

@@ -80,4 +80,4 @@ class list_view(BrowserView):
         now = DateTime()
         query['expires'] = {'query': (now), 'range': 'min'}
         results = portal_catalog(query)
-        return len(results) 
+        return len(results)

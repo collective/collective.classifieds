@@ -62,8 +62,12 @@
                         <td>
                                 <div tal:content="structure here/getDescription" />
                             
-                                <h3 i18n:translate="classifieds_classifiedsclassified_label_price">Price</h3>
-                                <span tal:content="python:'%0.2f' % context.price" /> <br />
+                                <span tal:condition="exists: context/price">
+                                        <h3 i18n:translate="classifieds_classifiedsclassified_label_price">Price</h3>
+                                        <span tal:content="python:'%0.2f' % context.price" />
+                                </span>
+                                <br />
+                                
                                 
                         </td>
                     </tr>
