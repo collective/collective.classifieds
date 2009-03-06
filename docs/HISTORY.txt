@@ -1,6 +1,13 @@
 Changelog
 =========
 
+0.6.1 - Beta
+----------------
+
+* Added custom workflow for a Classified, which allows users with the role member to add classifieds
+
+
+
 0.6 - Beta
 ----------------
 
