@@ -53,4 +53,5 @@ You can skip the ZCML slug if you are going to explicitly include the package
 from another package's configure.zcml file.
 
 Remember to rebuild / reindex your portal_catalog when updating a existing installation.
+Also check archtype_tool if the schema needs to be updated.
 
