@@ -1,6 +1,18 @@
 Changelog
 =========
 
+
+0.6.2 - Beta
+----------------
+
+* Cleaned up all pagetemplates
+* Fixed bug when using multiple instances of Classifieds object (path bug)
+* Fixed price formatting bug in 'by author view'
+* Cleaned up python classes and added more documentation
+
+
+
+
 0.6.1 - Beta
 ----------------
 
