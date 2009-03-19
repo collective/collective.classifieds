@@ -16,7 +16,7 @@ class classifieds_by_author_view(BrowserView):
     """
         Browser view class to view classifieds by author
     """
-    
+
     def getClassifiedsByAuthor(self):
         """
             returns a list of Classified brains based on searchstring, using CatalogSearch Class
@@ -37,7 +37,7 @@ class classifieds_by_author_view(BrowserView):
             results = []
             query = {'portal_type' : ["Classified"], "Creator" : author, 'sort_on' : sort_on, 'sort_order' : sort_order}
             results = CatalogSearch(self.context, query)()
-                
+
             if len(results) > 0:
                 return results
         return False

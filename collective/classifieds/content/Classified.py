@@ -1,14 +1,3 @@
-# -*- coding: utf-8 -*-
-#
-# File: Classified.py
-#
-# Copyright (c) 2008 by []
-# Generator: ArchGenXML Version 2.1
-#            http://plone.org/products/archgenxml
-#
-# GNU General Public License (GPL)
-#
-
 __author__ = """Four Digits <Ralph Jacobs>"""
 __docformat__ = 'plaintext'
 
@@ -24,15 +13,13 @@ from Products.CMFCore.utils import getToolByName
 
 
 from Products.CMFDynamicViewFTI.browserdefault import BrowserDefaultMixin
-
 from collective.classifieds.config import *
-
 
 schema = Schema((
 
     TextField(
         name='description',
-        allowable_content_types=('text/plain', 'text/structured', 'text/html', 'application/msword',),
+        allowable_content_types=('text/plain', 'text/html',),
         widget=RichWidget(
             label="Description",
             description="Description of the classified",
@@ -62,7 +49,7 @@ schema = Schema((
                    'tile'    :  (64, 64),
                    'icon'    :  (32, 32),
                    'listing' :  (16, 16),
-                  },        
+                  },
     ),
     FloatField(
         name='price',
@@ -87,7 +74,9 @@ Classified_schema = BaseSchema.copy() + \
 
 class Classified(BaseContent, BrowserDefaultMixin):
     """
+        Represents a Classified
     """
+
     security = ClassSecurityInfo()
 
     implements(interfaces.IClassified)
@@ -96,25 +85,25 @@ class Classified(BaseContent, BrowserDefaultMixin):
     _at_rename_after_creation = True
 
     schema = Classified_schema
-    
+
     def getPath(self):
         """Gets the path of the object"""
         path = '/'.join(self.getPhysicalPath());
         return path
-    
+
     def hasImage(self):
         """checks if the classified has a image"""
         if self.getImage():
             return True
-        
+
         return False
-    
+
     def getImageTile(self, **kwargs):
         """Get image tile url, for use in templates"""
         if self.hasImage():
             imgtileurl = '/'  + self.getImage().absolute_url(1) + '_tile'
-            
-            return imgtileurl     
+
+            return imgtileurl
         return ''
 
     def getClassifiedsCategory(self):
@@ -124,28 +113,26 @@ class Classified(BaseContent, BrowserDefaultMixin):
     def getClassifiedsCategoryPath(self):
         """Get classifieds category path"""
         return "%s" % (self.getParentNode().getPath())
-    
+
     def check_delete_permission(self):
         """Check if user may delete object"""
- 
+
         if getSecurityManager().checkPermission("Delete objects", self):
             if getSecurityManager().getUser().getUserName() == self.getOwner().getId():
                 return True
         return False
-       
-    
+
+
     def delete(self):
-        """delete this object"""
+        """Delete this object"""
         parent = self.aq_inner.aq_parent
-        
+
         if self.check_delete_permission():
             parent._delObject(self.id)
 
-            return self.REQUEST.RESPONSE.redirect( "%s?classified_title=%s&portal_status_message=%s" % (parent.absolute_url(), self.Title(), "has been deleted."))     
-       
-        return self.REQUEST.RESPONSE.redirect( "%s?classified_title=%s&portal_status_message=%s %s" % (parent.absolute_url(), self.Title(), "has NOT been deleted."))     
+            return self.REQUEST.RESPONSE.redirect( "%s?classified_title=%s&portal_status_message=%s" % (parent.absolute_url(), self.Title(), "has been deleted."))
+
+        return self.REQUEST.RESPONSE.redirect( "%s?classified_title=%s&portal_status_message=%s %s" % (parent.absolute_url(), self.Title(), "has NOT been deleted."))
 
 registerType(Classified, PROJECTNAME)
 # end of class Classified
-
-

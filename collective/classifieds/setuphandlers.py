@@ -1,7 +1,6 @@
 __author__ = """Four Digits <unknown>"""
 __docformat__ = 'plaintext'
 
-
 import logging
 logger = logging.getLogger('Classifieds: setuphandlers')
 from collective.classifieds.config import PROJECTNAME
@@ -18,13 +17,14 @@ def isNotClassifiedsProfile(context):
 def updateRoleMappings(context):
     """after workflow changed update the roles mapping. this is like pressing
     the button 'Update Security Setting' and portal_workflow"""
-    if isNotClassifiedsProfile(context): return 
+
+    # only for classifieds types
+    if isNotClassifiedsProfile(context): return
     wft = getToolByName(context.getSite(), 'portal_workflow')
     wft.updateRoleMappings()
-
 
 def postInstall(context):
     """Called as at the end of the setup process. """
     # the right place for your custom code
-    if isNotClassifiedsProfile(context): return 
+    if isNotClassifiedsProfile(context): return
     site = context.getSite()

@@ -12,7 +12,6 @@ from Products.CMFDynamicViewFTI.browserdefault import BrowserDefaultMixin
 from Products.CMFCore.utils import getToolByName
 from DateTime import DateTime
 
-
 class list_view(BrowserView):
     """
         Browser view class, lists classifieds and categories within the Classifieds
@@ -20,22 +19,23 @@ class list_view(BrowserView):
     def quotestring(self, string):
         """Adds a quote to the given string"""
         return '"%s"' % string
-    
+
     def quote_bad_chars(self, string):
         """quotes bad characters"""
         bad_chars = ["(", ")"]
         for char in bad_chars:
             string = string.replace(char, self.quotestring(char))
         return string
-    
+
     def getLatestClassifieds(self, limit):
         """Returns 10 latest classifieds"""
         if limit == "":
             limit = 10
         query = {'portal_type' : ["Classified"], 'sort_on':'created', 'sort_order':'reverse', 'sort_limit':limit}
+        query['path'] = {'query':'/'.join(self.context.getPhysicalPath())}
         results = CatalogSearch(self.context, query)()
         return results
-    
+
     def search(self):
         """
             returns a list of Classified brains based on searchstring, using CatalogSearch Class
@@ -50,7 +50,7 @@ class list_view(BrowserView):
             sort_on = self.request.form.get('sort_on')
         if self.request.form.get('frm_searchString') and len(self.request.form.get('frm_searchString')) > 0:
             searchstring = self.request.form.get('frm_searchString')
-            
+
             # check if the searchstring is more then 2 characters for 'like' style wildcard search
             if len(searchstring) > 2:
                 for char in '?-+*':
@@ -65,11 +65,11 @@ class list_view(BrowserView):
                 query = {'portal_type' : ["Classified"], "SearchableText" : tmpresults, 'sort_on' : sort_on, "sort_order" : sort_order };
                 query['path'] = {'query':'/'.join(self.context.getPhysicalPath())}
                 results = CatalogSearch(self.context, query)()
-                
+
                 if len(results) > 0:
                     return results;
         return False
-    
+
     def getNumberOfClassifieds(self, item):
         """Returns number of classifieds in the category"""
         path = '/%s' % item.getPath()

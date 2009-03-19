@@ -1,7 +1,6 @@
 __author__ = """Four Digits <Ralph Jacobs>"""
 __docformat__ = 'plaintext'
 
-
 import logging
 logger = logging.getLogger('Classifieds')
 logger.debug('Installing Product')
@@ -50,4 +49,3 @@ def initialize(context):
         context.registerClass(meta_type   = all_ftis[i]['meta_type'],
                               constructors= (all_constructors[i],),
                               permission  = ADD_CONTENT_PERMISSIONS[klassname])
-

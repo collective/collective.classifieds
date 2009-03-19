@@ -4,7 +4,7 @@
            xmlns:zcml="http://namespaces.zope.org/zcml"
            xmlns:i18n="http://xml.zope.org/namespaces/i18n"
            i18n_domain="plone">
- 
+
     <browser:page
        for="collective.classifieds.content.interfaces.IClassifieds"
        name="list_view"
@@ -12,7 +12,7 @@
        template="templates/list_view.pt"
        permission="zope2.View"
        />
-    
+
     <browser:page
        for="collective.classifieds.content.interfaces.IClassifieds"
        name="all_classifiedsclassifieds_view"
@@ -20,8 +20,7 @@
        template="templates/all_classifieds_view.pt"
        permission="zope2.View"
        />
-    
-    
+
     <browser:page
        for="collective.classifieds.content.interfaces.IClassified"
        name="classifiedsclassified_view"
@@ -29,15 +28,15 @@
        template="templates/classified_view.pt"
        permission="zope2.View"
        />
-    
+
     <browser:page
        for="collective.classifieds.content.interfaces.IClassifiedsCategory"
        name="classifiedscategory_view"
        class="collective.classifieds.browser.classifiedscategory_view.classifiedscategory_view"
        template="templates/classifiedscategory_view.pt"
        permission="zope2.View"
-       />    
-    
+       />
+
     <browser:page
        for="collective.classifieds.content.interfaces.IClassified"
        name="classifiedsclassified_by_author_view"
@@ -45,16 +44,15 @@
        template="templates/classifieds_by_author_view.pt"
        permission="zope2.View"
        />
-  
-  
+
     <browser:resourceDirectory
         name="collective.classifieds.images"
         directory="images"
     />
-    
+
     <browser:resourceDirectory
         name="collective.classifieds.css"
         directory="css"
     />
-  
+
 </configure>

@@ -15,11 +15,11 @@ class all_classifieds_view(BrowserView):
     """
         Browser view for all classifieds
     """
-    
+
     def quotestring(self, string):
         """Adds a quote to the given string"""
         return '"%s"' % string
-    
+
     def quote_bad_chars(self, string):
         """quotes bad characters"""
         bad_chars = [""""\"""", "\\","/","(", ")"]
@@ -27,7 +27,7 @@ class all_classifieds_view(BrowserView):
             string = string.replace(char, self.quotestring(char))
         return string
 
-    
+
     def getAllClassifieds(self):
         """Returns all classifieds in Classifieds"""
         sort_order = ""
@@ -42,7 +42,7 @@ class all_classifieds_view(BrowserView):
         query = {'portal_type' : ["Classified"], 'sort_on':sort_on, 'sort_order':sort_order}
         results = CatalogSearch(self.context, query)()
         return results
-    
+
     def search(self):
         """
             returns a list of Classified brains based on searchstring, using CatalogSearch Class
@@ -57,7 +57,7 @@ class all_classifieds_view(BrowserView):
             sort_on = self.request.form.get('sort_on')
         if self.request.form.get('frm_searchString') and len(self.request.form.get('frm_searchString')) > 0:
             searchstring = self.request.form.get('frm_searchString')
-            
+
             # check if the searchstring is more then 2 characters for 'like' style wildcard search
             if len(searchstring) > 2:
                 for char in '?-+*':
@@ -72,7 +72,7 @@ class all_classifieds_view(BrowserView):
                 query = {'portal_type' : ["Classified"], "SearchableText" : tmpresults, 'sort_on' : sort_on, "sort_order" : sort_order }
                 query['path'] = {'query':'/'.join(self.context.getPhysicalPath())}
                 results = CatalogSearch(self.context, query)()
-                    
+
                 if len(results) > 0:
                     return results
                 return ''

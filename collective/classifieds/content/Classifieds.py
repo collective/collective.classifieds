@@ -1,14 +1,3 @@
-# -*- coding: utf-8 -*-
-#
-# File: Classifieds.py
-#
-# Copyright (c) 2008 by []
-# Generator: ArchGenXML Version 2.1
-#            http://plone.org/products/archgenxml
-#
-# GNU General Public License (GPL)
-#
-
 __author__ = """Four Digits <Ralph Jacobs>"""
 __docformat__ = 'plaintext'
 
@@ -18,23 +7,19 @@ from zope.interface import implements
 import interfaces
 
 from Products.CMFDynamicViewFTI.browserdefault import BrowserDefaultMixin
-
 from collective.classifieds.config import *
 
-
 schema = Schema((
-
 
 ),
 )
 
-
 Classifieds_schema = BaseBTreeFolderSchema.copy() + \
     schema.copy()
 
-
 class Classifieds(BaseBTreeFolder, BrowserDefaultMixin):
     """
+        Container which can contain Categories and Classifieds
     """
     security = ClassSecurityInfo()
 
@@ -50,10 +35,5 @@ class Classifieds(BaseBTreeFolder, BrowserDefaultMixin):
         path = '/'.join(self.getPhysicalPath());
         return path
 
-    # Methods
-
 registerType(Classifieds, PROJECTNAME)
 # end of class Classifieds
-
-
-
