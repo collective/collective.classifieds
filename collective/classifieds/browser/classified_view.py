@@ -11,5 +11,5 @@ from Products.CMFDynamicViewFTI.browserdefault import BrowserDefaultMixin
 
 class classified_view(BrowserView):
     """
-        Browser view for classified
+        BrowserView for classified
     """

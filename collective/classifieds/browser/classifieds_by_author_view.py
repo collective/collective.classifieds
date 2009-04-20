@@ -13,14 +13,10 @@ from Products.CMFDynamicViewFTI.browserdefault import BrowserDefaultMixin
 
 
 class classifieds_by_author_view(BrowserView):
-    """
-        Browser view class to view classifieds by author
-    """
+    """BrowserView class to view classifieds by author"""
 
     def getClassifiedsByAuthor(self):
-        """
-            returns a list of Classified brains based on searchstring, using CatalogSearch Class
-        """
+        """returns a list of Classified brains based on searchstring, using CatalogSearch Class"""
         sort_order = ""
         searchstring = ""
         sort_on = "sortable_title"

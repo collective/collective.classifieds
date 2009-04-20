@@ -15,9 +15,7 @@ from DateTime import DateTime
 
 
 class classifiedscategory_view(BrowserView):
-    """
-        Browser view class for viewing a classifiedscategory
-    """
+    """BrowserView class for viewing a classifiedscategory"""
     def quotestring(self, string):
         """Adds a quote to the given string"""
         return '"%s"' % string
@@ -30,9 +28,7 @@ class classifiedscategory_view(BrowserView):
         return string    
     
     def search(self):
-        """
-            returns a list of Classified brains based on searchstring, using CatalogSearch Class
-        """
+        """Returns a list of Classified brains based on searchstring, using CatalogSearch Class"""
         sort_order = ""
         searchstring = ""
         sort_on = "sortable_title"

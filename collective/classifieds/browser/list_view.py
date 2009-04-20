@@ -13,9 +13,7 @@ from Products.CMFCore.utils import getToolByName
 from DateTime import DateTime
 
 class list_view(BrowserView):
-    """
-        Browser view class, lists classifieds and categories within the Classifieds
-    """
+    """BrowserView class, lists classifieds and categories within the Classifieds"""
     def quotestring(self, string):
         """Adds a quote to the given string"""
         return '"%s"' % string

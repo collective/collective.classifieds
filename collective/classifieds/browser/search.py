@@ -11,9 +11,7 @@ from Products.CMFCore.utils import getToolByName
 
 
 class CatalogSearch:
-    """
-        Searches the portal_catalog using given query
-    """
+    """Searches the portal_catalog using given query"""
 
     def __init__(self, context, query):
         """

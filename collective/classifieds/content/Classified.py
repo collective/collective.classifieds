@@ -7,11 +7,8 @@ from zope.interface import implements
 import interfaces
 from Products.CMFPlone import utils
 from Acquisition import aq_inner,aq_parent
-# from DateTime import DateTime
-from AccessControl import getSecurityManager;
+from AccessControl import getSecurityManager
 from Products.CMFCore.utils import getToolByName
-
-
 from Products.CMFDynamicViewFTI.browserdefault import BrowserDefaultMixin
 from collective.classifieds.config import *
 

@@ -26,7 +26,6 @@ def initialize(context):
     import content
     import browser
 
-
     # Initialize portal content
     all_content_types, all_constructors, all_ftis = process_types(
         listTypes(PROJECTNAME),

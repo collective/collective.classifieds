@@ -12,9 +12,7 @@ from Products.CMFDynamicViewFTI.browserdefault import BrowserDefaultMixin
 
 
 class all_classifieds_view(BrowserView):
-    """
-        Browser view for all classifieds
-    """
+    """BrowserView for all classifieds"""
 
     def quotestring(self, string):
         """Adds a quote to the given string"""
@@ -44,9 +42,7 @@ class all_classifieds_view(BrowserView):
         return results
 
     def search(self):
-        """
-            returns a list of Classified brains based on searchstring, using CatalogSearch Class
-        """
+        """returns a list of Classified brains based on searchstring, using CatalogSearch Class"""
         sort_order = ""
         searchstring = ""
         sort_on = "sortable_title"
