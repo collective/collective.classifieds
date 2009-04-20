@@ -9,7 +9,7 @@
       name="default"
       title="Classifieds"
       directory="profiles/default"
-      description="Extension profile for Classifieds."
+      description="Add classifieds to a Plone intranet or website."
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
