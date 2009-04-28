@@ -14,6 +14,7 @@
         title="Published">
   <permission-map name="Access contents information"
                   acquired="False">
+   <permission-role>Anonymous</permission-role>
    <permission-role>Owner</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reviewer</permission-role>
@@ -39,6 +40,7 @@
   </permission-map>
   <permission-map name="List folder contents"
                   acquired="False">
+   <permission-role>Anonymous</permission-role>
    <permission-role>Owner</permission-role>
    <permission-role>Manager</permission-role>
    <permission-role>Reviewer</permission-role>
@@ -59,6 +61,7 @@
   </permission-map>
   <permission-map name="View"
                   acquired="False">
+   <permission-role>Anonymous</permission-role>
    <permission-role>Owner</permission-role>
    <permission-role>Member</permission-role>
    <permission-role>Manager</permission-role>
