@@ -1,6 +1,13 @@
 Changelog
 =========
 
+
+1.0rc1 - Release candidate 2
+----------------
+
+* Changed workflow so anonymous users can view classifieds
+
+
 1.0rc1 - Release candidate 1
 ----------------
 

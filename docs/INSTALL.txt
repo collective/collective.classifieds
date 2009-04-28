@@ -54,4 +54,4 @@ from another package's configure.zcml file.
 
 Remember to rebuild / reindex your portal_catalog when updating a existing installation.
 Also check archtype_tool if the schema needs to be updated.
-
+Finally, check the portal_workflow tool if security settings need to be updated
