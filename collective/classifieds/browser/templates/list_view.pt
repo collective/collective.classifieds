@@ -109,7 +109,7 @@
                                                  </th>
                                         </tr>
                                         <tbody>
-                                                <tr tal:repeat="item python: context.getFolderContents(contentFilter={'meta_type':['ClassifiedsCategory'], 'sort_on':'sortable_title', 'sort_order':context.REQUEST.get('sort_order')})" tal:attributes="class python:repeat['item'].odd()==1 and 'odd' or 'even'">
+                                                <tr tal:repeat="item python: context.getFolderContents(contentFilter={'meta_type':['ClassifiedsCategory'], 'sort_on':context.REQUEST.get('sortable_title'), 'sort_order':context.REQUEST.get('sort_order')})" tal:attributes="class python:repeat['item'].odd()==1 and 'odd' or 'even'">
                                                         <td>
                                                                 <img tal:attributes="src string:${item/getIcon}" />
                                                                 <a tal:attributes="href string:${item/getURL}" tal:content="item/Title">Name</a>

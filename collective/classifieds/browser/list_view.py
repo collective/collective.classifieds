@@ -41,6 +41,8 @@ class list_view(BrowserView):
         sort_order = ""
         searchstring = ""
         sort_on = "sortable_title"
+        
+        
 
         if self.request.form.get('sort_order'):
             sort_order = self.request.form.get('sort_order')
@@ -60,12 +62,12 @@ class list_view(BrowserView):
                 tmpresults = searchstring
 
             if tmpresults != '*':
-                query = {'portal_type' : ["Classified"], "SearchableText" : tmpresults, 'sort_on' : sort_on, "sort_order" : sort_order };
+                query = {'portal_type' : ["Classified"], "SearchableText" : tmpresults, 'sort_on' : sort_on, "sort_order" : sort_order}
                 query['path'] = {'query':'/'.join(self.context.getPhysicalPath())}
                 results = CatalogSearch(self.context, query)()
 
                 if len(results) > 0:
-                    return results;
+                    return results
         return False
 
     def getNumberOfClassifieds(self, item):

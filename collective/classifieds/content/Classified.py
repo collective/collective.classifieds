@@ -12,6 +12,8 @@ from Products.CMFCore.utils import getToolByName
 from Products.CMFDynamicViewFTI.browserdefault import BrowserDefaultMixin
 from collective.classifieds.config import *
 
+
+
 schema = Schema((
 
     TextField(
