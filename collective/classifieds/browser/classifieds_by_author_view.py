@@ -28,7 +28,7 @@ class classifieds_by_author_view(BrowserView):
         if self.request.form.get('sort_on'):
             sort_on = self.request.form.get('sort_on')
         if self.request.form.get('sort_order'):
-            sort_order = self.request.form.get('sort_order');
+            sort_order = self.request.form.get('sort_order')
         if self.request.form.get('author') and len(self.request.form.get('author')) > 0:
             results = []
             query = {'portal_type' : ["Classified"], "Creator" : author, 'sort_on' : sort_on, 'sort_order' : sort_order}
