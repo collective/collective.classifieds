@@ -11,13 +11,19 @@
                  b_start request/b_start | b_start;" id="classifieds">
 
             <div tal:replace="structure provider:plone.abovecontenttitle" />
+			
+                <h3 tal:content="context/Title"></h3>
+                
+                <div tal:content="context/Description"/>
+			
+            <br />
+            <br />
 
         	<div class="classifiedsinfo" i18n:translate="classifieds_introtext">
                 Search for a classified within this category, browse the classifieds or click on a specific subcategory to view the classifieds.
 			</div>
 
-            <br />
-
+			<br />
             <form class="enableAutoFocus" method="post" name="frmsearch" id="frmsearch">
                     <!-- start search box -->
                     <div id="searchContainer">

@@ -34,11 +34,17 @@
 
                 <span i18n:translate="classifieds_goto" class="classifieds_goto">Go to </span>
                 <a tal:attributes="href python: context.getParentNode().absolute_url()" tal:content="python: context.getParentNode().Title()">Category</a>
+                
+                
+                <h3 tal:content="context/Title"></h3>
+                
+                <div tal:content="context/Description"/>
+                
                 <br />
                 <br />
 
 
-                <div class="classifiedsinfo"  i18n:translate="classifieds_introtext">
+                <div class="classifiedsinfo" i18n:translate="classifieds_introtext">
                         Search for a classified within this category, browse the classifieds or click on a specific subcategory to view the classifieds.
                 </div>
 
