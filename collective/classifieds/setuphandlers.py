@@ -10,9 +10,29 @@ from config import product_globals
 from Globals import package_home
 from Products.CMFCore.utils import getToolByName
 import transaction
+from Products.CMFPlone.utils import log
+from OFS.CopySupport import CopyContainer
+
 
 def isNotClassifiedsProfile(context):
     return context.readDataFile("Classifieds_marker.txt") is None
+    
+    
+def migrateFromOldFolderStructure(context):
+    """migrate basetree folders, not yet implemented"""
+    if isNotClassifiedsProfile(context): return
+    site = context.getSite()
+    catalog = getToolByName(site, 'portal_catalog')
+        
+        
+        
+        
+    
+    
+    
+    
+    
+
 
 def updateRoleMappings(context):
     """after workflow changed update the roles mapping. this is like pressing

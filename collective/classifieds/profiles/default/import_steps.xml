@@ -10,6 +10,16 @@
  </import-step>
 
  <import-step 
+    id="Classifieds-migrateFromOldFolderStructure" 
+    handler="collective.classifieds.setuphandlers.migrateFromOldFolderStructure"
+    title="Migrate from old folder structure"
+    version="2009-07-13T12:46:19.022741">
+   <dependency step="Classifieds-QI-dependencies"/>
+   Migrate from old folder structure
+ </import-step>
+
+
+ <import-step 
     id="Classifieds-postInstall" 
     handler="collective.classifieds.setuphandlers.postInstall"
     title="manual coded post-install for Classifieds"
