@@ -9,7 +9,7 @@ import interfaces
 from Products.CMFDynamicViewFTI.browserdefault import BrowserDefaultMixin
 from collective.classifieds.config import *
 
-from Products.ATContentTypes.content.folder import ATFolderSchema, ATFolder
+from plone.app.folder.base import BaseBTreeFolder
 
 
 schema = Schema((
@@ -17,10 +17,10 @@ schema = Schema((
 ),
 )
 
-Classifieds_schema = ATFolderSchema.copy() + \
+Classifieds_schema = BaseBTreeFolderSchema.copy() + \
     schema.copy()
 
-class Classifieds(ATFolder):
+class Classifieds(BaseBTreeFolder, BrowserDefaultMixin):
     """
         Container which can contain Categories and Classifieds
     """

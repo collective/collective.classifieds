@@ -8,18 +8,18 @@ import interfaces
 
 from Products.CMFDynamicViewFTI.browserdefault import BrowserDefaultMixin
 from collective.classifieds.config import *
+from plone.app.folder.base import BaseBTreeFolder
 
-from Products.ATContentTypes.content.folder import ATFolderSchema, ATFolder
 
 schema = Schema((
 
 ),
 )
 
-ClassifiedsCategory_schema = ATFolderSchema.copy() + \
+ClassifiedsCategory_schema = BaseBTreeFolderSchema.copy() + \
     schema.copy()
 
-class ClassifiedsCategory(ATFolder):
+class ClassifiedsCategory(BaseBTreeFolder, BrowserDefaultMixin):
     """
         Category which can contain Classifieds (such as books)
     """
