@@ -67,6 +67,9 @@ msgstr "alle advertenties aangemaakt door"
 msgid "classifieds_classifieds_all_created_by_header"
 msgstr "Alle advertenties aangemaakt door"
 
+msgid "classifieds_classifieds_all_created_by_go_back"
+msgstr "Ga terug"
+
 msgid "classifieds_browse_categories"
 msgstr "Bladeren door Categoriën"
 

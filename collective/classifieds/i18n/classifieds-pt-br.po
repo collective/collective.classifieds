@@ -75,6 +75,9 @@ msgstr "Todos os classificados criados por"
 msgid "classifieds_classifieds_all_created_by_header"
 msgstr "Todos os classificados criados por"
 
+msgid "classifieds_classifieds_all_created_by_go_back"
+msgstr "Voltar"
+
 msgid "classifieds_classifieds"
 msgstr "Classificados"
 
@@ -85,9 +88,6 @@ msgid "classifieds_resultsfound"
 msgstr "resultado(s) encontrado(s)"
 
 msgid "classifieds_classifieds_all_created_by"
-msgstr "Todos os classificados criados por"
-
-msgid "classifieds_classifieds_all_created_by_header"
 msgstr "Todos os classificados criados por"
 
 msgid "classifieds_invalid_float"

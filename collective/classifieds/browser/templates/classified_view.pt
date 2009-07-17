@@ -82,20 +82,20 @@
                                 <tal:block tal:content="structure here/getDescription" />
 
                                 <tal:block tal:condition="exists: context/price">
-                                        <h3 i18n:translate="classifieds_classifiedsclassified_label_price">Price</h3>
+                                        <h2 class="classified_title" i18n:translate="classifieds_classifiedsclassified_label_price">Price</h2>
                                         <tal:block tal:content="python:'%0.2f' % context.price" />
                                 </tal:block>
                                 <br />
                         </td>
                     </tr>
                 </table>
-                <h3 i18n:translate="classifieds_label_classifiedscategory">Classifieds Category</h3>
+                <h2 class="classified_title" i18n:translate="classifieds_label_classifiedscategory">Classifieds Category</h2>
                         <a tal:attributes="href python: context.getParentNode().absolute_url()" tal:content="context/getClassifiedsCategory">Content</a>
                 <br />
                 
                 
                 
-                <h3 i18n:translate="classifieds_label_directlink">Directlink:</h3>
+                <h2 class="classified_title"  i18n:translate="classifieds_label_directlink">Directlink:</h2>
                 <a tal:attributes="href python: context.absolute_url()" tal:content="context/absolute_url">Content</a>
                 
                 

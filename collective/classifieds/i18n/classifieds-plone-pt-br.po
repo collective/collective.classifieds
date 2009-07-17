@@ -66,6 +66,9 @@ msgstr "todos os classificados criados por"
 msgid "classifieds_classifieds_all_created_by_header"
 msgstr "Todos os classificados criados por"
 
+msgid "classifieds_classifieds_all_created_by_go_back"
+msgstr "Voltar"
+
 msgid "classifieds_browse_categories"
 msgstr "Navegar pelas categorias"
 

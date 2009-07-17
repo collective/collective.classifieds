@@ -72,6 +72,12 @@ msgstr "All classifieds created by"
 msgid "classifieds_classifieds_all_created_by_header"
 msgstr "All classifieds created by"
 
+msgid "classifieds_classifieds_all_created_by_go_back"
+msgstr "Go back"
+
+msgid "classifieds_classifieds_all_created_by_go"
+msgstr "All classifieds created by"
+
 msgid "classifieds_classifieds"
 msgstr "Classifieds"
 
@@ -84,8 +90,6 @@ msgstr "result(s) found"
 msgid "classifieds_classifieds_all_created_by"
 msgstr "All classifieds created by"
 
-msgid "classifieds_classifieds_all_created_by_header"
-msgstr "All classifieds created by"
 
 msgid "classifieds_invalid_float"
 msgstr "Please enter a valid numeric value"

@@ -28,9 +28,20 @@
 }
 
 
-.classified_title {
+h1.classified_title {
     text-decoration: none;
     border: 0px;
+	
+	font-weight: bold;
+	
+}
+
+h2.classified_title {
+    text-decoration: none;
+    border: 0px;
+	font-size:110%;
+	font-weight: bold;
+	
 }
 
 img.image_tile {

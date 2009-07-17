@@ -70,6 +70,9 @@ msgstr "alle advertenties aangemaakt door"
 msgid "classifieds_classifieds_all_created_by_header"
 msgstr "Alle advertenties aangemaakt door"
 
+msgid "classifieds_classifieds_all_created_by_go_back"
+msgstr "Ga terug"
+
 msgid "classifieds_classifieds"
 msgstr "Advertenties"
 
@@ -82,8 +85,6 @@ msgstr "resultaten gevonden"
 msgid "classifieds_classifieds_all_created_by"
 msgstr "alle advertenties aangemaakt door"
 
-msgid "classifieds_classifieds_all_created_by_header"
-msgstr "Alle advertenties aangemaakt door"
 
 msgid "classifieds_invalid_float"
 msgstr "Geef een numerieke waarde op"
