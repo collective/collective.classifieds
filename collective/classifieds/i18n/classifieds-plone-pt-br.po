@@ -45,6 +45,12 @@ msgstr "Estes são os resultados para esta categoria"
 msgid "classifieds_classifieds_view"
 msgstr "Visão"
 
+msgid "classified_author"
+msgstr "autor"
+
+msgid "classifieds_classifieds_email"
+msgstr "E-mail"
+
 msgid "classifieds_classifieds"
 msgstr "Classificados"
 
@@ -115,6 +121,9 @@ msgstr "Categorias nesta categoria"
 msgid "classifieds_classifiedscategories_label"
 msgstr "Categorias"
 
+msgid "classifieds_classifiedscategories_image"
+msgstr "Imagem"
+
 msgid "classified_label_placedby"
 msgstr "Classificado anunciado por"
 
@@ -123,6 +132,9 @@ msgstr "em"
 
 msgid "classifieds_label_classifiedscategory"
 msgstr "Categoria"
+
+msgid "classifieds_label_directlink"
+msgstr "Link direto"
 
 msgid "classifieds_classified_expired"
 msgstr "Classificado expirado"

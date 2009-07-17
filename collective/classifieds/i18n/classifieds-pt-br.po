@@ -27,6 +27,12 @@ msgstr "Imagem"
 msgid "classifieds_classified_image_description"
 msgstr "Imagem/foto do classificado"
 
+msgid "classifieds_classified_additionalimage"
+msgstr "Adicional imagem"
+
+msgid "classifieds_classified_additionalimage_description"
+msgstr "Adicional Imagem/foto do classificado"
+
 msgid "classifieds_classified_price"
 msgstr "Preço"
 

@@ -46,6 +46,12 @@ msgstr "Dit zijn alle resultaten in deze categorie"
 msgid "classifieds_classifieds_view"
 msgstr "Bekijk"
 
+msgid "classified_author"
+msgstr "auteur"
+
+msgid "classifieds_classifieds_email"
+msgstr "E-mail"
+
 msgid "classifieds_classifieds"
 msgstr "Advertenties"
 
@@ -116,6 +122,9 @@ msgstr "Subcategoriën in de categorie"
 msgid "classifieds_classifiedscategories_label"
 msgstr "Categoriën"
 
+msgid "classifieds_classifiedscategories_image"
+msgstr "Afbeelding"
+
 msgid "classified_label_placedby"
 msgstr "Advertentie geplaatst door"
 
@@ -124,6 +133,9 @@ msgstr "op"
 
 msgid "classifieds_label_classifiedscategory"
 msgstr "Categorie"
+
+msgid "classifieds_label_directlink"
+msgstr "Directe link"
 
 msgid "classifieds_classified_expired"
 msgstr "Advertentie verlopen"
@@ -139,4 +151,10 @@ msgstr "Geef een numerieke waarde op"
 
 msgid "classifieds_classifiedscategories_amount_label"
 msgstr "Aantal"
+
+msgid "classifieds_classifiedscategory_categoryimage"
+msgstr "Categorie afbeelding"
+
+msgid "classifieds_classifiedscategory_categoryimage_description"
+msgstr "Afbeelding die een goede representatie geeft van de categorie"
 

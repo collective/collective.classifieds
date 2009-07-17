@@ -118,5 +118,4 @@
   <guard>
   </guard>
  </variable>
- <!-- We dont use workflow scripts any more, we use subscribers -->
-</dc-workflow>
+ </dc-workflow>

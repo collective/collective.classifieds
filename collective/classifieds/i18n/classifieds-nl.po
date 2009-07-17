@@ -28,6 +28,12 @@ msgstr "Foto"
 msgid "classifieds_classified_image_description"
 msgstr "Foto/afbeelding van het artikel"
 
+msgid "classifieds_classified_additionalimage"
+msgstr "Aanvullende foto"
+
+msgid "classifieds_classified_additionalimage_description"
+msgstr "Aanvullende foto/afbeelding van het artikel"
+
 msgid "classifieds_classified_price"
 msgstr "Prijs"
 
@@ -42,12 +48,6 @@ msgstr "Omschrijving"
 
 msgid "classifieds_classified_description_description"
 msgstr "Omschrijving"
-
-msgid "classifieds_classified_image"
-msgstr "Foto"
-
-msgid "classifieds_classified_image_description"
-msgstr "Foto/afbeelding van het artikel"
 
 msgid "classifieds_classified_price"
 msgstr "Prijs"
@@ -90,6 +90,12 @@ msgstr "Geef een numerieke waarde op"
 
 msgid "classifieds_results"
 msgstr "Zoekresultaten"
+
+msgid "classifieds_classifiedscategory_categoryimage"
+msgstr "Categorie afbeelding"
+
+msgid "classifieds_classifiedscategory_categoryimage_description"
+msgstr "Afbeelding die een goede representatie geeft van de categorie"
 
 
 

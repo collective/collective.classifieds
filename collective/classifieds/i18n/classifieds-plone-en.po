@@ -46,6 +46,12 @@ msgstr "This are all the results of this category"
 msgid "classifieds_classifieds_view"
 msgstr "View"
 
+msgid "classified_author"
+msgstr "author"
+
+msgid "classifieds_classifieds_email"
+msgstr "E-mail"
+
 msgid "classifieds_classifieds"
 msgstr "Classifieds"
 
@@ -116,6 +122,10 @@ msgstr "Categories in this category"
 msgid "classifieds_classifiedscategories_label"
 msgstr "Categories"
 
+msgid "classifieds_classifiedscategories_image"
+msgstr "Image"
+
+
 msgid "classified_label_placedby"
 msgstr "Classified placed by"
 
@@ -124,6 +134,9 @@ msgstr "at"
 
 msgid "classifieds_label_classifiedscategory"
 msgstr "Category"
+
+msgid "classifieds_label_directlink"
+msgstr "Directlink"
 
 msgid "classifieds_classified_expired"
 msgstr "Classified expired"

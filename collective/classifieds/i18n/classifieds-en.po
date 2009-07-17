@@ -28,6 +28,13 @@ msgstr "Photo"
 msgid "classifieds_classified_image_description"
 msgstr "Photo/picture of the classified"
 
+msgid "classifieds_classified_additionalimage"
+msgstr "Additional photo"
+
+msgid "classifieds_classified_additionalimage_description"
+msgstr "Additional photo/picture of the classified"
+
+
 msgid "classifieds_classified_price"
 msgstr "Price"
 
@@ -43,11 +50,6 @@ msgstr "Description"
 msgid "classifieds_classified_description_description"
 msgstr "Description"
 
-msgid "classifieds_classified_image"
-msgstr "Photo"
-
-msgid "classifieds_classified_image_description"
-msgstr "Photo/picture of the classified"
 
 msgid "classifieds_classified_price"
 msgstr "Price"
@@ -90,5 +92,11 @@ msgstr "Please enter a valid numeric value"
 
 msgid "classifieds_results"
 msgstr "Searchresults"
+
+msgid "classifieds_classifiedscategory_categoryimage"
+msgstr "Category image"
+
+msgid "classifieds_classifiedscategory_categoryimage_description"
+msgstr "Image which represents the category"
 
 

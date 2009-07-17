@@ -50,6 +50,26 @@ schema = Schema((
                    'listing' :  (16, 16),
                   },
     ),
+    ImageField(
+        name='additionalimage',
+        widget=ImageField._properties['widget'](
+            label="Additional image",
+            description="Additional image of the classified",
+            label_msgid="classifieds_classified_additionalimage",
+            description_msgid="classifieds_classified_additionalimage_description",
+            i18n_domain='classifieds',
+        ),
+        storage=AttributeStorage(),
+        max_size=(768,768),
+        sizes= {'large'   : (768, 768),
+                   'preview' : (400, 400),
+                   'mini'    : (200, 200),
+                   'thumb'   : (128, 128),
+                   'tile'    :  (64, 64),
+                   'icon'    :  (32, 32),
+                   'listing' :  (16, 16),
+                  },
+    ),
     FloatField(
         name='price',
         widget=DecimalWidget(
@@ -63,6 +83,7 @@ schema = Schema((
         required=False,
         searchable=True,
     ),
+    
 ),
 )
 
@@ -94,7 +115,6 @@ class Classified(BaseContent, BrowserDefaultMixin):
         """checks if the classified has a image"""
         if self.getImage():
             return True
-
         return False
 
     def getImageTile(self, **kwargs):
@@ -120,7 +140,6 @@ class Classified(BaseContent, BrowserDefaultMixin):
             if getSecurityManager().getUser().getUserName() == self.getOwner().getId():
                 return True
         return False
-
 
     def delete(self):
         """Delete this object"""
