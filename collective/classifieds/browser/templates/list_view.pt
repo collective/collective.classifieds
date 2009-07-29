@@ -99,7 +99,7 @@
 
                     <!-- list categories, no search -->
                     <tal:block tal:condition="not:results">
-                        <tal:block tal:condition="python: context.getFolderContents(contentFilter={'meta_type':['ClassifiedsCategory']})">
+                        <tal:block tal:condition="python: context.getFolderContents(contentFilter={'meta_type':['ClassifiedsCategory','OrderedClassifiedsCategory']})">
                             <h2 class="classified_title" i18n:translate="classifieds_browse_categories">Browse</h2>
                                 <table border="0" width="100%" class="listing">
                                         <tr>
@@ -127,7 +127,7 @@
 											
 											
 											
-                                                <tr tal:repeat="item python: context.getFolderContents(contentFilter={'meta_type':['ClassifiedsCategory'], 'sort_on':context.REQUEST.get('sort_on'), 'sort_order':context.REQUEST.get('sort_order')})" tal:attributes="class python:repeat['item'].odd()==1 and 'odd list_view' or 'even list_view'">
+                                                <tr tal:repeat="item python: context.getFolderContents(contentFilter={'meta_type':['ClassifiedsCategory','OrderedClassifiedsCategory'], 'sort_on':context.REQUEST.get('sort_on'), 'sort_order':context.REQUEST.get('sort_order')})" tal:attributes="class python:repeat['item'].odd()==1 and 'odd list_view' or 'even list_view'">
                                                         <td>
 															
 															    <img tal:attributes="src string:${item/getImageTile}" />

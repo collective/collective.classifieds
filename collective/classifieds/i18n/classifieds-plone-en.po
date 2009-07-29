@@ -22,8 +22,14 @@ msgstr "Photo/picture of the classifieds"
 msgid "Classifieds"
 msgstr "Classifieds"
 
+msgid "OrderedClassifieds"
+msgstr "Classifieds (with order)"
+
 msgid "ClassifiedsCategory"
 msgstr "Category"
+
+msgid "OrderedClassifiedsCategory"
+msgstr "Category (with order)"
 
 msgid "Classified"
 msgstr "Classified"

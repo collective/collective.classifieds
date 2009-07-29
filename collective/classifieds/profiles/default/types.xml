@@ -10,5 +10,12 @@
 
  <object name="Classified"
          meta_type="Factory-based Type Information with dynamic views"/>
+ 
+ <object name="OrderedClassifiedsCategory"
+         meta_type="Factory-based Type Information with dynamic views"/>
+
+ <object name="OrderedClassifieds"
+         meta_type="Factory-based Type Information with dynamic views"/>
+
 
 </object>

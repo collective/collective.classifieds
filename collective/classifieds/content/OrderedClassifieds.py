@@ -9,36 +9,34 @@ import interfaces
 from Products.CMFDynamicViewFTI.browserdefault import BrowserDefaultMixin
 from collective.classifieds.config import *
 
+from Products.ATContentTypes.content.folder import ATFolderSchema, ATFolder
+
+
 schema = Schema((
 
 ),
 )
 
-ClassifiedsCategory_schema = BaseBTreeFolderSchema.copy() + \
+OrderedClassifieds_schema = ATFolderSchema.copy() + \
     schema.copy()
 
-class ClassifiedsCategory(BaseBTreeFolder, BrowserDefaultMixin):
+class OrderedClassifieds(ATFolder):
     """
-        Category which can contain Classifieds (such as books)
+        Container which can contain Categories and Classifieds (Ordered)
     """
     security = ClassSecurityInfo()
 
-    implements(interfaces.IClassifiedsCategory)
+    implements(interfaces.IOrderedClassifieds)
 
-    meta_type = 'ClassifiedsCategory'
+    meta_type = 'OrderedClassifieds'
     _at_rename_after_creation = True
 
-    schema = ClassifiedsCategory_schema
+    schema = OrderedClassifieds_schema
 
     def getPath(self):
         """Gets the path of the object"""
         path = '/'.join(self.getPhysicalPath());
         return path
 
-    def getParentTitle(self):
-        """Get parent title"""
-        return "%s" % (self.getParentNode().Title())
-    # Methods
-
-registerType(ClassifiedsCategory, PROJECTNAME)
-# end of class ClassifiedsCategory
+registerType(OrderedClassifieds, PROJECTNAME)
+# end of class Classifieds

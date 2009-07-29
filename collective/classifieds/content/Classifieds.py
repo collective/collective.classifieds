@@ -9,18 +9,15 @@ import interfaces
 from Products.CMFDynamicViewFTI.browserdefault import BrowserDefaultMixin
 from collective.classifieds.config import *
 
-from Products.ATContentTypes.content.folder import ATFolderSchema, ATFolder
-
-
 schema = Schema((
 
 ),
 )
 
-Classifieds_schema = ATFolderSchema.copy() + \
+Classifieds_schema = BaseBTreeFolderSchema.copy() + \
     schema.copy()
 
-class Classifieds(ATFolder):
+class Classifieds(BaseBTreeFolder, BrowserDefaultMixin):
     """
         Container which can contain Categories and Classifieds
     """

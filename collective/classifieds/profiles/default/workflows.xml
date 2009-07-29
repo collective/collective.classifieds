@@ -8,5 +8,8 @@
   <type type_id="Classified">
    <bound-workflow workflow_id="classifieds_onestate_workflow" />
   </type>
+  <type type_id="OrderedClassifiedsCategory">
+   <bound-workflow workflow_id="classifieds_onestate_workflow" />
+  </type>
  </bindings>
 </object>

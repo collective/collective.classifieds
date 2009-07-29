@@ -22,8 +22,14 @@ msgstr "Foto/afbeelding van het artikel"
 msgid "Classifieds"
 msgstr "Advertenties"
 
+msgid "OrderedClassifieds"
+msgstr "Advertenties (met volgorde)"
+
 msgid "ClassifiedsCategory"
 msgstr "Categorie"
+
+msgid "OrderedClassifiedsCategory"
+msgstr "Categorie (met volgorde)"
 
 msgid "Classified"
 msgstr "Advertentie"

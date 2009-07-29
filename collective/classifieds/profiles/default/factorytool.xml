@@ -4,5 +4,7 @@
   <type portal_type="ClassifiedsCategory"/>
   <type portal_type="Classifieds"/>
   <type portal_type="Classified"/>
+  <type portal_type="OrderedClassifieds"/>
+  <type portal_type="OrderedClassifiedsCategory"/>
  </factorytypes>
 </object>

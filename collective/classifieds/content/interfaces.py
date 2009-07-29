@@ -12,3 +12,12 @@ class IClassifieds(Interface):
 class IClassified(Interface):
     """Marker interface for .Classified.Classified
     """
+
+class IOrderedClassifieds(Interface):
+    """Marker interface for .Classifieds.Classifieds
+    """
+
+
+class IOrderedClassifiedsCategory(Interface):
+    """Marker interface for .OrderedClassifiedsCategory.OrderedClassifiedsCategory
+    """

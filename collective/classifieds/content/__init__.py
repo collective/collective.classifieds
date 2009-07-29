@@ -11,3 +11,6 @@ validation.register(FloatValidator('isFloat'))
 import ClassifiedsCategory
 import Classifieds
 import Classified
+import OrderedClassifieds
+import OrderedClassifiedsCategory
+

@@ -50,15 +50,11 @@ msgstr "Description"
 msgid "classifieds_classified_description_description"
 msgstr "Description"
 
-
 msgid "classifieds_classified_price"
 msgstr "Price"
 
 msgid "classifieds_classified_price_description"
 msgstr "Price of the classified"
-
-msgid "classifieds_classifieds"
-msgstr "Classifieds"
 
 msgid "classifieds_you_searched_on"
 msgstr "You searched on"
