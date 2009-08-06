@@ -1,6 +1,18 @@
 Changelog
 =========
 
+
+1.5a - Crossover release (alpha)
+----------------
+* Crossover release which introduces two new contenttypes: OrderedClassifiedCategory and OrderedClassifieds (container)
+* Custom order in Classifieds (container) and the Categories (read the INSTALL.txt)
+* Multiple pictures for a classified
+* 'E-mail the author' option
+* Directlink to classified
+* Picture and description added to Categories
+* New templates / layout
+
+
 1.0.1 - Release 1.0.1
 ----------------
 * Added Brazilian Portugese translations [erico_andrei]
