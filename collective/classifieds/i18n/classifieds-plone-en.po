@@ -162,3 +162,5 @@ msgstr "Please enter a valid numeric value"
 msgid "classifieds_classifiedscategories_amount_label"
 msgstr "Amount"
 
+msgid "marketplace_no_image_tile_label"
+msgstr "No image"

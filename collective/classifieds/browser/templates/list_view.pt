@@ -63,11 +63,7 @@
                                         <tal:block tal:condition="python:not portal.isExpired(item)">
                                                 <td>
                                                         <tal:block tal:condition="item/hasImage">
-
 																<img class="image_tile" tal:attributes="src python:item.getImageTile" />
-
-
-
                                                         </tal:block>
                                                         <tal:block tal:condition="not: item/hasImage">
                                                                 <img class="image_tile" src="++resource++collective.classifieds.images/no_photo.jpg" />
@@ -124,13 +120,17 @@
 												</th>
                                         </tr>
                                         <tbody>
-											
-											
-											
                                                 <tr tal:repeat="item python: context.getFolderContents(contentFilter={'meta_type':['ClassifiedsCategory','OrderedClassifiedsCategory'], 'sort_on':context.REQUEST.get('sort_on'), 'sort_order':context.REQUEST.get('sort_order')})" tal:attributes="class python:repeat['item'].odd()==1 and 'odd list_view' or 'even list_view'">
                                                         <td>
-															
+															<tal:block tal:condition="item/hasImage">
 															    <img tal:attributes="src string:${item/getImageTile}" />
+															</tal:block>
+																
+															<tal:block tal:condition="not: item/hasImage">
+																	<img class="image_tile" src="++resource++collective.classifieds.images/no_photo.jpg" />
+																	<span i18n:translate="marketplace_no_image_tile_label">No Image</span>
+															</tal:block>
+																
 														</td>
 														<td>
 																<img class="image_tile" tal:attributes="src item/getIcon" />

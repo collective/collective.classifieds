@@ -160,3 +160,5 @@ msgstr "Por favor informe um valor numérico."
 msgid "classifieds_classifiedscategories_amount_label"
 msgstr "Quantidade"
 
+msgid "marketplace_no_image_tile_label"
+msgstr "Nenhuma Imagem"

@@ -167,3 +167,5 @@ msgstr "Categorie afbeelding"
 msgid "classifieds_classifiedscategory_categoryimage_description"
 msgstr "Afbeelding die een goede representatie geeft van de categorie"
 
+msgid "marketplace_no_image_tile_label"
+msgstr "Geen afbeelding"
