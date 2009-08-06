@@ -269,7 +269,7 @@
                        <!-- list (sub)categories, if there is no search -->
                         <tal:block tal:condition="not:view/search">
 
-                                <span tal:condition="python: context.getFolderContents(contentFilter={'meta_type':['ClassifiedsCategory', 'OrderedClassifiedsCategory'], 'sort_order':'sortable_title', 'sort_on':context.REQUEST.get('sort_on')})">
+                                <span tal:condition="python: context.getFolderContents(contentFilter={'meta_type':['ClassifiedsCategory', 'OrderedClassifiedsCategory'], 'sort_on':'sortable_title', 'sort_order':context.REQUEST.get('sort_category_order')})">
                                         <h2 class="classified_title">
                                                 <span i18n:translate="classifieds_classifiedsclassified_label_categories_in_this_category">Subcategories in this category</span>:
                                                 <tal:block tal:content="context/Title">Title</tal:block>
@@ -283,12 +283,12 @@
                                                         <th>
                                                                 <span i18n:translate="classifieds_classifiedsclassified_label_categories_in_this_category">Categories in this category</span>
                                                                 <span tal:content="context/Title"></span>
-                                                                <a tal:condition="python:(context.REQUEST.get('sort_order')) != 'reverse' or not context.REQUEST.has_key('sort_order')"
-                                                                     tal:attributes="href string:${here/absolute_url}?sort_order=reverse&sort_on=sortable_title">
+                                                                <a tal:condition="python:(context.REQUEST.get('sort_category_order')) == 'normal' or not context.REQUEST.has_key('sort_category_order')"
+                                                                     tal:attributes="href string:${here/absolute_url}?sort_category_order=reverse&sort_on=sortable_title">
                                                                     [<span i18n:translate="classifieds_sorting">sort</span>]
                                                                 </a>
-                                                                <a tal:condition="python:(context.REQUEST.get('sort_order')=='reverse')"
-                                                                     tal:attributes="href string:${here/absolute_url}?sort_on=sortable_title">
+                                                                <a tal:condition="python:(context.REQUEST.get('sort_category_order')=='reverse')"
+                                                                     tal:attributes="href string:${here/absolute_url}?sort_on=sortable_title&sort_category_order=normal">
                                                                     [<span i18n:translate="classifieds_sorting">sort</span>]
                                                                 </a>
                                                         </th>
@@ -300,7 +300,7 @@
                                                 <tbody>
                                                                 
                                                         
-                                                        <tr tal:repeat="item python: context.getFolderContents(contentFilter={'meta_type':['ClassifiedsCategory','OrderedClassifiedsCategory'],'sort_on':context.REQUEST.get('sort_on'), 'sort_order':context.REQUEST.get('sort_order')})" tal:attributes="class python:repeat['item'].odd()==1 and 'odd' or 'even'">
+                                                        <tr tal:repeat="item python: context.getFolderContents(contentFilter={'meta_type':['ClassifiedsCategory','OrderedClassifiedsCategory'],'sort_on':'sortable_title', 'sort_order':context.REQUEST.get('sort_category_order')})" tal:attributes="class python:repeat['item'].odd()==1 and 'odd' or 'even'">
                                                                 <td>
                                                                         
                                                                         <img class="image_tile" tal:attributes="src python:item.getImageTile" />
