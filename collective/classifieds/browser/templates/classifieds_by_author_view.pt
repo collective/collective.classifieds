@@ -64,7 +64,7 @@
                                                                         <tal:block tal:condition="python:not portal.isExpired(item)">
                                                                                 <td>
                                                                                         <tal:block tal:condition="item/hasImage">
-                                                                                                <img class="image_tile" tal:attributes="src string:${portal_url}${item/getImageTile}" />
+                                                                                                <img class="image_tile" tal:attributes="src string:${portal_url}/${item/getImageTile}" />
                                                                                                 
                                                                                         </tal:block>
                                                                                         <tal:block tal:condition="not: item/getImageTile">
