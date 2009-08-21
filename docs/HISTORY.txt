@@ -1,6 +1,11 @@
 Changelog
 =========
 
+1.5b - Crossover release (beta)
+----------------
+* Fixed some issues regarding indexing of image urls, template calls
+* Added view tab to Classified
+
 
 1.5a - Crossover release (alpha)
 ----------------
