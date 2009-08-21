@@ -10,7 +10,7 @@ from config import product_globals
 from Globals import package_home
 from Products.CMFCore.utils import getToolByName
 import transaction
-from Products.CMFPlone.utils import log
+
 from OFS.CopySupport import CopyContainer
 
 def isNotClassifiedsProfile(context):

@@ -5,6 +5,7 @@ from AccessControl import ClassSecurityInfo
 from Products.Archetypes.atapi import *
 from zope.interface import implements
 import interfaces
+from Products.CMFCore.utils import getToolByName
 
 from Products.CMFDynamicViewFTI.browserdefault import BrowserDefaultMixin
 from collective.classifieds.config import *
@@ -69,10 +70,11 @@ class OrderedClassifiedsCategory(ATFolder):
         return False
     
     def getImageTile(self, **kwargs):
-        """Get image tile url, for use in templates"""
+        """Get image tile url, relative to plone site."""
         if self.hasImage():
-            imgtileurl = '/'  + self.getCategoryimage().absolute_url(1) + '_tile'
-
+            imgtileurl = self.getCategoryimage().absolute_url(1) + '_tile'
+            portal_url = getToolByName(self, 'portal_url').getPortalObject().absolute_url(1)
+            imgtileurl = imgtileurl.replace(portal_url, '')
             return imgtileurl
         return ''
     

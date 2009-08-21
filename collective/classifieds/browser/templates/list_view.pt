@@ -11,7 +11,6 @@
                  b_start request/b_start | b_start;" id="classifieds">
 
             <div tal:replace="structure provider:plone.abovecontenttitle" />
-			
                 <h1 class="classified_title" tal:content="context/Title"></h1>
                 
                 <div tal:content="context/Description"/>
@@ -63,7 +62,8 @@
                                         <tal:block tal:condition="python:not portal.isExpired(item)">
                                                 <td>
                                                         <tal:block tal:condition="item/hasImage">
-																<img class="image_tile" tal:attributes="src python:item.getImageTile" />
+																
+																<img class="image_tile" tal:attributes="src string:${portal_url}${item/getImageTile}" />
                                                         </tal:block>
                                                         <tal:block tal:condition="not: item/hasImage">
                                                                 <img class="image_tile" src="++resource++collective.classifieds.images/no_photo.jpg" />
@@ -123,9 +123,9 @@
                                                 <tr tal:repeat="item python: context.getFolderContents(contentFilter={'meta_type':['ClassifiedsCategory','OrderedClassifiedsCategory'], 'sort_on':context.REQUEST.get('sort_on'), 'sort_order':context.REQUEST.get('sort_order')})" tal:attributes="class python:repeat['item'].odd()==1 and 'odd list_view' or 'even list_view'">
                                                         <td>
 															<tal:block tal:condition="item/hasImage">
-															    <img tal:attributes="src string:${item/getImageTile}" />
-															</tal:block>
 																
+																<img class="image_tile" tal:attributes="src string:${portal_url}${item/getImageTile}" />
+															</tal:block>
 															<tal:block tal:condition="not: item/hasImage">
 																	<img class="image_tile" src="++resource++collective.classifieds.images/no_photo.jpg" />
 																	<span i18n:translate="marketplace_no_image_tile_label">No Image</span>
@@ -155,9 +155,6 @@
                         <b>"<tal:block tal:content="request/frm_searchString">searchstring</tal:block>"</b>,
                         <tal:block tal:content="python:len(results)">0</tal:block>
                         <tal:block i18n:translate="classifieds_resultsfound">results found</tal:block>
-
-
-
 
                         <div tal:condition="results"
                              tal:define="batch python:Batch(results, b_size, int(b_start), orphan=1);">
@@ -233,9 +230,7 @@
                                         <tal:block tal:condition="python:not portal.isExpired(item)">
                                             <td>
                                                 <tal:block tal:condition="item/hasImage">
-													<img class="image_tile" tal:attributes="src python:item.getImageTile" />
-
-
+													<img class="image_tile" tal:attributes="src string:${portal_url}${item/getImageTile}" />
                                                 </tal:block>
                                                 <tal:block tal:condition="not: item/hasImage">
                                                         <img class="image_tile" src="++resource++collective.classifieds.images/no_photo.jpg" />

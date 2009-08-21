@@ -118,12 +118,13 @@ class Classified(BaseContent, BrowserDefaultMixin):
         return False
 
     def getImageTile(self, **kwargs):
-        """Get image tile url, for use in templates"""
+        """Get image tile url, relative to plone site."""
         if self.hasImage():
-            imgtileurl = '/'  + self.getImage().absolute_url(1) + '_tile'
-
+            imgtileurl = self.getImage().absolute_url(1) + '_tile'
+            portal_url = getToolByName(self, 'portal_url').getPortalObject().absolute_url(1)
+            imgtileurl = imgtileurl.replace(portal_url, '')
             return imgtileurl
-        return ''
+        return ''    
 
     def getClassifiedsCategory(self):
         """Get classifieds category"""

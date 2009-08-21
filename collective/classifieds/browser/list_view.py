@@ -3,7 +3,7 @@ __docformat__ = 'plaintext'
 
 from zope import interface
 from zope import component
-from Products.CMFPlone.utils import log
+
 from Products.Five import BrowserView
 from zope.interface import implements
 from collective.classifieds.content.Classifieds import Classifieds
@@ -69,6 +69,7 @@ class list_view(BrowserView):
                 if len(results) > 0:
                     return results
         return False
+    
 
     def getNumberOfClassifieds(self, item):
         """Returns number of classifieds in the category"""
