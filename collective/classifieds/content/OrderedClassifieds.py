@@ -8,19 +8,20 @@ import interfaces
 
 from Products.CMFDynamicViewFTI.browserdefault import BrowserDefaultMixin
 from collective.classifieds.config import *
+from Products.Archetypes import atapi
+from Products.ATContentTypes.content import folder
+from Products.ATContentTypes.content import document
+from Products.ATContentTypes.content import schemata
+from Products.ATContentTypes.lib.constraintypes import ConstrainTypesMixinSchema
 
-from Products.ATContentTypes.content.folder import ATFolderSchema, ATFolder
+OrderedClassifieds_schema = document.ATDocumentSchema + ConstrainTypesMixinSchema + schemata.NextPreviousAwareSchema + atapi.Schema((
+
+))
+
+schemata.finalizeATCTSchema(OrderedClassifieds_schema, folderish=True, moveDiscussion=False)
 
 
-schema = Schema((
-
-),
-)
-
-OrderedClassifieds_schema = ATFolderSchema.copy() + \
-    schema.copy()
-
-class OrderedClassifieds(ATFolder):
+class OrderedClassifieds(folder.ATFolder):
     """
         Container which can contain Categories and Classifieds (Ordered)
     """

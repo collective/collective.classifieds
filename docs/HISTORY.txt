@@ -3,6 +3,15 @@ Changelog
 
 1.5b - Crossover release (beta)
 ----------------
+* upgr to work in plone 4
+  [maartenkling]
+* added global defines when needed to templates
+  [maartenkling]
+* changes folderish type definition of classifiedsCategory ( plone 4 )
+  [maartenkling]
+* changed the implements for validator ( plone 4 )
+  [maartenkling]
+
 * Fixed some issues regarding indexing of image urls, template calls
 * Added view tab to Classified
 

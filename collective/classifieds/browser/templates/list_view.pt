@@ -5,6 +5,7 @@
 <body>
     <div metal:fill-slot="main"
                  tal:define="results python: view.search();
+                 portal context/@@plone_portal_state/portal;
                  Batch python:modules['Products.CMFPlone'].Batch;
                  b_size python:30;
                  b_start python:0;
@@ -12,9 +13,9 @@
 
             <div tal:replace="structure provider:plone.abovecontenttitle" />
                 <h1 class="classified_title" tal:content="context/Title"></h1>
-                
+
                 <div tal:content="context/Description"/>
-			
+
             <br />
             <br />
 
@@ -62,7 +63,7 @@
                                         <tal:block tal:condition="python:not portal.isExpired(item)">
                                                 <td>
                                                         <tal:block tal:condition="item/hasImage">
-																
+
 																<img class="image_tile" tal:attributes="src string:${portal_url}/${item/getImageTile}" />
                                                         </tal:block>
                                                         <tal:block tal:condition="not: item/hasImage">
@@ -72,7 +73,7 @@
                                                 </td>
                                                 <td>
 														<img tal:attributes="src item/getIcon" />
-														
+
                                                         <a tal:attributes="href string:${item/getURL}" tal:content="item/Title">Name</a>
                                                 </td>
                                                 <td>
@@ -100,7 +101,7 @@
                                 <table border="0" width="100%" class="listing">
                                         <tr>
                                                 <th>
-													
+
 													<tal:block i18n:translate="classifieds_classifiedscategories_image">Image</tal:block>
                                                  </th>
 												<th>
@@ -123,14 +124,14 @@
                                                 <tr tal:repeat="item python: context.getFolderContents(contentFilter={'meta_type':['ClassifiedsCategory','OrderedClassifiedsCategory'], 'sort_on':context.REQUEST.get('sort_on'), 'sort_order':context.REQUEST.get('sort_order')})" tal:attributes="class python:repeat['item'].odd()==1 and 'odd list_view' or 'even list_view'">
                                                         <td>
 															<tal:block tal:condition="item/hasImage">
-																
+
 																<img class="image_tile" tal:attributes="src string:${portal_url}/${item/getImageTile}" />
 															</tal:block>
 															<tal:block tal:condition="not: item/hasImage">
 																	<img class="image_tile" src="++resource++collective.classifieds.images/no_photo.jpg" />
 																	<span i18n:translate="marketplace_no_image_tile_label">No Image</span>
 															</tal:block>
-																
+
 														</td>
 														<td>
 																<img class="image_tile" tal:attributes="src item/getIcon" />
@@ -225,7 +226,7 @@
                                 </tr>
                                 <tbody>
                                     <!-- content -->
-									
+
                                     <tr tal:repeat="item batch" tal:attributes="class python:repeat['item'].odd()==1 and 'odd' or 'even'">
                                         <tal:block tal:condition="python:not portal.isExpired(item)">
                                             <td>

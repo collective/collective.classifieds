@@ -6,6 +6,8 @@
     <div metal:fill-slot="main"
                  tal:define="results python: view.search();
                  Batch python:modules['Products.CMFPlone'].Batch;
+                 mtool context/portal_membership;
+                 portal context/@@plone_portal_state/portal;
                  b_size python:30;
                  b_start python:0;
                  b_start request/b_start | b_start;" id="classifieds">
@@ -125,7 +127,7 @@
                                     <tal:block tal:condition="python:not portal.isExpired(item)">
                                         <td>
                                             <tal:block tal:condition="item/hasImage">
-                                                
+
                                                 <img class="image_tile" tal:attributes="src string:${portal_url}/${item/getImageTile}" />
 
                                             </tal:block>

@@ -1,13 +1,17 @@
 import re
 from Products.validation.interfaces import ivalidator
+from Products.validation.interfaces.IValidator import IValidator
+from zope.interface import implements
+
 from Products.CMFPlone import utils
 from zope.i18n import translate
 
 class FloatValidator:
     """
-       Class which provides us a simple validation check on a float 
+       Class which provides us a simple validation check on a float
     """
-    __implements__ = (ivalidator,)
+    #__implements__ = (ivalidator,)
+    implements (IValidator)
     def __init__(self, name):
         self.name = name
 
@@ -21,6 +25,6 @@ class FloatValidator:
             if re.match(FLOAT_RE,value):
                 return 1
         else:
-            return 1 
-        
-        return translate(u'classifieds_invalid_float', domain='classifieds', context=self)
+            return 1
+
+        return translate('classifieds_invalid_float', 'classifieds', context=self.request)

@@ -6,6 +6,8 @@
 
 <div metal:fill-slot="main"
              tal:define="results python: view.getClassifiedsByAuthor();
+             portal context/@@plone_portal_state/portal;
+             mtool context/portal_membership;
              Batch python:modules['Products.CMFPlone'].Batch;
              b_size python:30;
              b_start python:0;
@@ -14,7 +16,7 @@
         <div tal:replace="structure provider:plone.abovecontenttitle" />
 
 
-        
+
         <a href="javascript:history.go(-1)" i18n:translate="classifieds_classifieds_all_created_by_go_back">Go back</a>
 
         <tal:block tal:condition="python: context.REQUEST.get('author') and len(context.REQUEST.get('author')) > 0">
@@ -65,7 +67,7 @@
                                                                                 <td>
                                                                                         <tal:block tal:condition="item/hasImage">
                                                                                                 <img class="image_tile" tal:attributes="src string:${portal_url}/${item/getImageTile}" />
-                                                                                                
+
                                                                                         </tal:block>
                                                                                         <tal:block tal:condition="not: item/getImageTile">
                                                                                                 <img class="image_tile" src="++resource++collective.classifieds.images/no_photo.jpg" />

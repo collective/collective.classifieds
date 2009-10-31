@@ -10,7 +10,13 @@ from Products.CMFCore.utils import getToolByName
 from Products.CMFDynamicViewFTI.browserdefault import BrowserDefaultMixin
 from collective.classifieds.config import *
 
-from Products.ATContentTypes.content.folder import ATFolderSchema, ATFolder
+from collective.classifieds.config import *
+from Products.Archetypes import atapi
+from Products.ATContentTypes.content import folder
+from Products.ATContentTypes.content import document
+from Products.ATContentTypes.content import schemata
+from Products.ATContentTypes.lib.constraintypes import ConstrainTypesMixinSchema
+
 
 schema = Schema((
     ImageField(
@@ -32,15 +38,21 @@ schema = Schema((
                    'icon'    :  (32, 32),
                    'listing' :  (16, 16),
                   },
-    ),    
+    ),
 
 ),
 )
 
-OrderedClassifiedsCategory_schema = ATFolderSchema.copy() + \
+OrderedClassifiedsCategory_schema = document.ATDocumentSchema + ConstrainTypesMixinSchema + schemata.NextPreviousAwareSchema + atapi.Schema((
+
+))+ \
     schema.copy()
 
-class OrderedClassifiedsCategory(ATFolder):
+
+schemata.finalizeATCTSchema(OrderedClassifiedsCategory_schema, folderish=True, moveDiscussion=False)
+
+
+class OrderedClassifiedsCategory(folder.ATFolder):
     """
         Category which can contain Classifieds (such as books), Ordered version
     """
@@ -61,14 +73,14 @@ class OrderedClassifiedsCategory(ATFolder):
     def getParentTitle(self):
         """Get parent title"""
         return "%s" % (self.getParentNode().Title())
-        
+
     def hasImage(self):
         """checks if the category has a image"""
         if self.getCategoryimage():
             return True
 
         return False
-    
+
     def getImageTile(self, **kwargs):
         """Get image tile url, relative to plone site."""
         if self.hasImage():
@@ -77,7 +89,7 @@ class OrderedClassifiedsCategory(ATFolder):
             imgtileurl = imgtileurl.replace(portal_url, '')
             return imgtileurl
         return ''
-    
+
     # Methods
 
 registerType(OrderedClassifiedsCategory, PROJECTNAME)
