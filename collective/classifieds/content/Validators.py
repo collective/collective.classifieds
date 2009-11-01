@@ -6,12 +6,24 @@ from zope.interface import implements
 from Products.CMFPlone import utils
 from zope.i18n import translate
 
+try:
+    # Plone 4 and higher
+    import plone.app.upgrade
+    USE_BBB_VALIDATORS = False
+except ImportError:
+    # BBB Plone 3
+    USE_BBB_VALIDATORS = True
+
 class FloatValidator:
     """
        Class which provides us a simple validation check on a float
     """
     #__implements__ = (ivalidator,)
-    implements (IValidator)
+    if USE_BBB_VALIDATORS:
+        __implements__ = (ivalidator,)
+    else:
+        implements(IValidator)
+
     def __init__(self, name):
         self.name = name
 
