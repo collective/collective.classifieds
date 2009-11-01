@@ -3,6 +3,8 @@ Changelog
 
 1.5b - Crossover release (beta)
 ----------------
+* changed the validator to work in plone 3 and 4
+  [maartenkling]
 * upgr to work in plone 4
   [maartenkling]
 * added global defines when needed to templates
