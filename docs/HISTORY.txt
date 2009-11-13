@@ -1,6 +1,17 @@
 Changelog
 =========
 
+
+1.5b2 - Plone 4 compatibilty and tests
+----------------
+* proper integration test added
+* changed testbase
+* update version information
+* tested on plone 3.3 and plone 4 
+ 
+
+
+
 1.5b - Crossover release (beta)
 ----------------
 * changed the validator to work in plone 3 and 4
