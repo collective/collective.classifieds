@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Classifieds\n"
 "POT-Creation-Date: 2008-10-10 09:05+0100\n"
-"PO-Revision-Date: 2008-10-10 11:08+0200\n"
-"Last-Translator: Ralph Jacobs\n"
+"PO-Revision-Date: 2009-11-13 11:41+0100\n"
+"Last-Translator: ralph <ralph@fourdigits.nl>\n"
 "Language-Team: Four Digits <support@fourdigits.nl>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -14,7 +14,7 @@ msgstr ""
 "Language-name: English\n"
 "Preferred-encodings: utf-8 latin1\n"
 "Domain: classifieds\n"
-"X-Is-Fallback-For: en-en en-us"
+"X-Is-Fallback-For: en-en en-us\n"
 
 msgid "classifieds_classified_description"
 msgstr "Description"
@@ -33,7 +33,6 @@ msgstr "Additional photo"
 
 msgid "classifieds_classified_additionalimage_description"
 msgstr "Additional photo/picture of the classified"
-
 
 msgid "classifieds_classified_price"
 msgstr "Price"
@@ -86,7 +85,6 @@ msgstr "result(s) found"
 msgid "classifieds_classifieds_all_created_by"
 msgstr "All classifieds created by"
 
-
 msgid "classifieds_invalid_float"
 msgstr "Please enter a valid numeric value"
 
@@ -98,5 +96,4 @@ msgstr "Category image"
 
 msgid "classifieds_classifiedscategory_categoryimage_description"
 msgstr "Image which represents the category"
-
 

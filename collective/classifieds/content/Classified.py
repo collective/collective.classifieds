@@ -12,10 +12,7 @@ from Products.CMFCore.utils import getToolByName
 from Products.CMFDynamicViewFTI.browserdefault import BrowserDefaultMixin
 from collective.classifieds.config import *
 
-
-
 schema = Schema((
-
     TextField(
         name='description',
         allowable_content_types=('text/plain', 'text/html',),
@@ -87,18 +84,14 @@ schema = Schema((
 ),
 )
 
-
 Classified_schema = BaseSchema.copy() + \
     schema.copy()
-
 
 class Classified(BaseContent, BrowserDefaultMixin):
     """
         Represents a Classified
     """
-
     security = ClassSecurityInfo()
-
     implements(interfaces.IClassified)
 
     meta_type = 'Classified'

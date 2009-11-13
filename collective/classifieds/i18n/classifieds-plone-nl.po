@@ -109,7 +109,6 @@ msgstr "Zoek een advertentie binnen deze categorie, blader door de advertenties,
 msgid "classifieds_allclassifieds_introtext"
 msgstr "Zoek een advertentie of blader door alle advertenties."
 
-
 msgid "classifieds_classifiedsclassified_label_description"
 msgstr "Omschrijving"
 

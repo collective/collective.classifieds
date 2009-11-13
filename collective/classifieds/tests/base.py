@@ -14,6 +14,7 @@ def setup_product():
     import collective.classifieds
     zcml.load_config('configure.zcml', collective.classifieds)
     fiveconfigure.debug_mode = False
+    ztc.installPackage('collective.classifieds')
     
 setup_product()
 ptc.setupPloneSite(products=['collective.classifieds'])
