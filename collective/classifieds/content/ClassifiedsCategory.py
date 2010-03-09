@@ -5,7 +5,8 @@ from AccessControl import ClassSecurityInfo
 from Products.Archetypes.atapi import *
 from zope.interface import implements
 import interfaces
-
+from Products.Archetypes.atapi import Schema
+from Products.Archetypes.public import registerType
 from Products.CMFDynamicViewFTI.browserdefault import BrowserDefaultMixin
 from collective.classifieds.config import *
 
