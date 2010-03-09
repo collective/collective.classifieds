@@ -2,8 +2,6 @@ import re
 from Products.validation.interfaces import ivalidator
 from Products.validation.interfaces.IValidator import IValidator
 from zope.interface import implements
-
-from Products.CMFPlone import utils
 from zope.i18n import translate
 
 try:
@@ -13,6 +11,7 @@ try:
 except ImportError:
     # BBB Plone 3
     USE_BBB_VALIDATORS = True
+
 
 class FloatValidator:
     """
@@ -34,9 +33,11 @@ class FloatValidator:
         FLOAT_RE = "^([+-]?)(?=\d|\.\d)\d*(\.\d*)?([Ee]([+-]?\d+))?$"
 
         if value:
-            if re.match(FLOAT_RE,value):
+            if re.match(FLOAT_RE, value):
                 return 1
         else:
             return 1
 
-        return translate('classifieds_invalid_float', 'classifieds', context=self.request)
+        return translate('classifieds_invalid_float',
+                         'classifieds',
+                         context=self.request)

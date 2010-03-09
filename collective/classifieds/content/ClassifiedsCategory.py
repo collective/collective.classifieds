@@ -17,6 +17,7 @@ schema = Schema((
 ClassifiedsCategory_schema = BaseBTreeFolderSchema.copy() + \
     schema.copy()
 
+
 class ClassifiedsCategory(BaseBTreeFolder, BrowserDefaultMixin):
     """
         Category which can contain Classifieds (such as books)
@@ -32,7 +33,7 @@ class ClassifiedsCategory(BaseBTreeFolder, BrowserDefaultMixin):
 
     def getPath(self):
         """Gets the path of the object"""
-        path = '/'.join(self.getPhysicalPath());
+        path = '/'.join(self.getPhysicalPath())
         return path
 
     def getParentTitle(self):

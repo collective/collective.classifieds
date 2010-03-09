@@ -1,21 +1,21 @@
 __author__ = """Four Digits <Ralph Jacobs>"""
 __docformat__ = 'plaintext'
 
-from AccessControl import ClassSecurityInfo
-from Products.Archetypes.atapi import *
-from zope.interface import implements
 import interfaces
+from AccessControl import ClassSecurityInfo
+from Products.Archetypes.atapi import ImageField
+from Products.Archetypes.atapi import Schema
+from Products.Archetypes.atapi import AttributeStorage
+from Products.Archetypes.public import registerType
+from zope.interface import implements
 from Products.CMFCore.utils import getToolByName
-
-from Products.CMFDynamicViewFTI.browserdefault import BrowserDefaultMixin
-from collective.classifieds.config import *
-
 from collective.classifieds.config import *
 from Products.Archetypes import atapi
 from Products.ATContentTypes.content import folder
 from Products.ATContentTypes.content import document
 from Products.ATContentTypes.content import schemata
-from Products.ATContentTypes.lib.constraintypes import ConstrainTypesMixinSchema
+from Products.ATContentTypes.lib.constraintypes \
+import ConstrainTypesMixinSchema
 
 
 schema = Schema((
@@ -25,21 +25,21 @@ schema = Schema((
             label="Category image",
             description="Image which represents the category",
             label_msgid="classifieds_classifiedscategory_categoryimage",
-            description_msgid="classifieds_classifiedscategory_categoryimage_description",
+            description_msgid=\
+            "classifieds_classifiedscategory_categoryimage_description",
             i18n_domain='classifieds',
         ),
         storage=AttributeStorage(),
-        max_size=(768,768),
-        sizes= {'large'   : (768, 768),
-                   'preview' : (400, 400),
-                   'mini'    : (200, 200),
-                   'thumb'   : (128, 128),
-                   'tile'    :  (64, 64),
-                   'icon'    :  (32, 32),
-                   'listing' :  (16, 16),
+        max_size=(768, 768),
+        sizes={'large': (768, 768),
+                   'preview': (400, 400),
+                   'mini': (200, 200),
+                   'thumb': (128, 128),
+                   'tile': (64, 64),
+                   'icon': (32, 32),
+                   'listing': (16, 16),
                   },
     ),
-
 ),
 )
 
@@ -51,7 +51,9 @@ OrderedClassifiedsCategory_schema += atapi.Schema((
 )) + schema.copy()
 
 
-schemata.finalizeATCTSchema(OrderedClassifiedsCategory_schema, folderish=True, moveDiscussion=False)
+schemata.finalizeATCTSchema(OrderedClassifiedsCategory_schema,
+                            folderish=True,
+                            moveDiscussion=False)
 
 
 class OrderedClassifiedsCategory(folder.ATFolder):
@@ -69,7 +71,7 @@ class OrderedClassifiedsCategory(folder.ATFolder):
 
     def getPath(self):
         """Gets the path of the object"""
-        path = '/'.join(self.getPhysicalPath());
+        path = '/'.join(self.getPhysicalPath())
         return path
 
     def getParentTitle(self):
@@ -86,8 +88,9 @@ class OrderedClassifiedsCategory(folder.ATFolder):
     def getImageTile(self, **kwargs):
         """Get image tile url, relative to plone site."""
         if self.hasImage():
+            portal_obj = getToolByName(self, 'portal_url').getPortalObject()
             imgtileurl = self.getCategoryimage().absolute_url(1) + '_tile'
-            portal_url = getToolByName(self, 'portal_url').getPortalObject().absolute_url(1)
+            portal_url = portal_obj.absolute_url(1)
             imgtileurl = imgtileurl.replace(portal_url, '')
             return imgtileurl
         return ''

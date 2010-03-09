@@ -8,7 +8,6 @@ from Products.Five import BrowserView
 from zope.interface import implements
 from collective.classifieds.content.Classifieds import Classifieds
 from collective.classifieds.browser.search import CatalogSearch
-
 from Products.CMFDynamicViewFTI.browserdefault import BrowserDefaultMixin
 
 

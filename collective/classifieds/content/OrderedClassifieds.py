@@ -5,23 +5,24 @@ from AccessControl import ClassSecurityInfo
 from Products.Archetypes.atapi import *
 from zope.interface import implements
 import interfaces
-
-from Products.CMFDynamicViewFTI.browserdefault import BrowserDefaultMixin
 from collective.classifieds.config import *
 from Products.Archetypes import atapi
 from Products.ATContentTypes.content import folder
 from Products.ATContentTypes.content import document
 from Products.ATContentTypes.content import schemata
-from Products.ATContentTypes.lib.constraintypes import ConstrainTypesMixinSchema
+from Products.ATContentTypes.lib.constraintypes \
+import ConstrainTypesMixinSchema
 
 OrderedClassifieds_schema = document.ATDocumentSchema.copy()
 OrderedClassifieds_schema += ConstrainTypesMixinSchema.copy()
 OrderedClassifieds_schema += schemata.NextPreviousAwareSchema.copy()
-OrderedClassifieds_schema += atapi.Schema ((
+OrderedClassifieds_schema += atapi.Schema((
 
 ))
 
-schemata.finalizeATCTSchema(OrderedClassifieds_schema, folderish=True, moveDiscussion=False)
+schemata.finalizeATCTSchema(OrderedClassifieds_schema,
+                            folderish=True,
+                            moveDiscussion=False)
 
 
 class OrderedClassifieds(folder.ATFolder):
@@ -39,7 +40,7 @@ class OrderedClassifieds(folder.ATFolder):
 
     def getPath(self):
         """Gets the path of the object"""
-        path = '/'.join(self.getPhysicalPath());
+        path = '/'.join(self.getPhysicalPath())
         return path
 
 registerType(OrderedClassifieds, PROJECTNAME)
