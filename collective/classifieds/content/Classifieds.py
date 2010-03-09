@@ -14,8 +14,7 @@ schema = Schema((
 ),
 )
 
-Classifieds_schema = BaseBTreeFolderSchema.copy() + \
-    schema.copy()
+Classifieds_schema = BaseBTreeFolderSchema.copy() + schema.copy()
 
 class Classifieds(BaseBTreeFolder, BrowserDefaultMixin):
     """

@@ -25,7 +25,6 @@ class all_classifieds_view(BrowserView):
             string = string.replace(char, self.quotestring(char))
         return string
 
-
     def getAllClassifieds(self):
         """Returns all classifieds in Classifieds"""
         sort_order = ""

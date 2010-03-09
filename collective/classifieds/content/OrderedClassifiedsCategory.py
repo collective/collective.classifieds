@@ -43,10 +43,12 @@ schema = Schema((
 ),
 )
 
-OrderedClassifiedsCategory_schema = document.ATDocumentSchema + ConstrainTypesMixinSchema + schemata.NextPreviousAwareSchema + atapi.Schema((
+OrderedClassifiedsCategory_schema = document.ATDocumentSchema.copy()
+OrderedClassifiedsCategory_schema += ConstrainTypesMixinSchema
+OrderedClassifiedsCategory_schema += schemata.NextPreviousAwareSchema
+OrderedClassifiedsCategory_schema += atapi.Schema((
 
-))+ \
-    schema.copy()
+)) + schema.copy()
 
 
 schemata.finalizeATCTSchema(OrderedClassifiedsCategory_schema, folderish=True, moveDiscussion=False)

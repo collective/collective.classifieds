@@ -14,7 +14,10 @@ from Products.ATContentTypes.content import document
 from Products.ATContentTypes.content import schemata
 from Products.ATContentTypes.lib.constraintypes import ConstrainTypesMixinSchema
 
-OrderedClassifieds_schema = document.ATDocumentSchema + ConstrainTypesMixinSchema + schemata.NextPreviousAwareSchema + atapi.Schema((
+OrderedClassifieds_schema = document.ATDocumentSchema.copy()
+OrderedClassifieds_schema += ConstrainTypesMixinSchema.copy()
+OrderedClassifieds_schema += schemata.NextPreviousAwareSchema.copy()
+OrderedClassifieds_schema += atapi.Schema ((
 
 ))
 
