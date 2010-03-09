@@ -1,6 +1,11 @@
 Changelog
 =========
 
+1.5rc1 - Release candidate one
+----------------
+* fixed permission bug
+* release candidate one
+
 1.5b4 - Bugfix and cleanup release
 ----------------
 * fixed broken egg

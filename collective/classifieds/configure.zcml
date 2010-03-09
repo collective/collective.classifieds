@@ -10,6 +10,6 @@
         <require permission="zope2.View" attributes="delete" />
     </class>
     
-    <five:registerPackage package="." />
+    <five:registerPackage package="." initialize=".initialize" />
 
 </configure>
