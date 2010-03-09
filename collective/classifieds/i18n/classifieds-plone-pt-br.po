@@ -162,3 +162,12 @@ msgstr "Quantidade"
 
 msgid "marketplace_no_image_tile_label"
 msgstr "Nenhuma Imagem"
+
+msgid "classifieds_classified_externalurl"
+msgstr "Endereço externo"
+
+msgid "classifieds_classified_externalurl_description"
+msgstr "External endereço onde maiores informações podem ser encontradas no anúncio"
+
+msgid "classifieds_label_externalurl"
+msgid "Endereço externo"

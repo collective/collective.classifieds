@@ -96,3 +96,9 @@ msgstr "Categorie afbeelding"
 
 msgid "classifieds_classifiedscategory_categoryimage_description"
 msgstr "Afbeelding die een goede representatie geeft van de categorie"
+
+msgid "classifieds_classified_externalurl"
+msgstr "Extern webadres"
+
+msgid "classifieds_classified_externalurl_description"
+msgstr "Extern adres waar meer informatie over de advertentie gevonden kan worden"

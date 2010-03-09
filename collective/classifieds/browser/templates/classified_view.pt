@@ -49,7 +49,7 @@
 
                                 <tal:block tal:condition="here/check_delete_permission">
                                         <br />
-                                        <a href="delete" i18n:translate="classifieds_classified_delete" tal:attributes="href string:${here/absolute_url}/delete">Delete classified</a>
+                                        <a href="delete" i18n:translate="classifieds_classified_delete" tal:attributes="href string:${here/absolute_url}/delete_confirmation">Delete classified</a>
                                 </tal:block>
                         </tal:block>
                 </div>
@@ -96,11 +96,13 @@
                         <a tal:attributes="href python: context.getParentNode().absolute_url()" tal:content="context/getClassifiedsCategory">Content</a>
                 <br />
 
-
-
                 <h2 class="classified_title"  i18n:translate="classifieds_label_directlink">Directlink:</h2>
                 <a tal:attributes="href python: context.absolute_url()" tal:content="context/absolute_url">Content</a>
 
+                <tal:block tal:condition="context/getExternalurl">
+                    <h2 class="classified_title"  i18n:translate="classifieds_label_externalurl">External URL:</h2>
+                    <a tal:attributes="href python: context.getExternalurl()" tal:content="context/getExternalurl"  target="_blank">External URL</a>
+                </tal:block>
 
                 <div id="document_actions"
                      class="documentActions"

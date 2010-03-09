@@ -12,6 +12,7 @@ from Products.CMFCore.utils import getToolByName
 from Products.CMFDynamicViewFTI.browserdefault import BrowserDefaultMixin
 from collective.classifieds.config import *
 
+
 schema = Schema((
     TextField(
         name='description',
@@ -80,7 +81,18 @@ schema = Schema((
         required=False,
         searchable=True,
     ),
-    
+    StringField(
+        name='externalurl',
+        widget=StringWidget(
+            label="External URL",
+            description="External URL to find more information about the classified",
+            label_msgid="classifieds_classified_externalurl",
+            description_msgid="classifieds_classified_externalurl_description",
+            i18n_domain='classifieds',
+        ),
+        required=False,
+        searchable=False,
+    ),
 ),
 )
 

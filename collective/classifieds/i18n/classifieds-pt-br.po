@@ -95,3 +95,4 @@ msgstr "Por favor informe um valor numérico"
 
 msgid "classifieds_results"
 msgstr "Resultados da busca"
+
