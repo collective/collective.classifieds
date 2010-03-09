@@ -4,18 +4,10 @@ __docformat__ = 'plaintext'
 import logging
 logger = logging.getLogger('Classifieds')
 logger.debug('Installing Product')
-
-import os
-import os.path
-from Globals import package_home
-import Products.CMFPlone.interfaces
 from Products.Archetypes import listTypes
 from Products.Archetypes.atapi import *
-from Products.Archetypes.utils import capitalize
 from Products.CMFCore import DirectoryView
-from Products.CMFCore import permissions as cmfpermissions
 from Products.CMFCore import utils as cmfutils
-from Products.CMFPlone.utils import ToolInit
 from config import *
 
 

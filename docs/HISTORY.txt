@@ -1,6 +1,10 @@
 Changelog
 =========
 
+1.5b4 - Bugfix and cleanup release
+----------------
+* fixed broken egg
+
 1.5b3 - Bugfix and cleanup release
 ----------------
 * collective.classifieds issue #7 fixed
