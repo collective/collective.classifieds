@@ -5,6 +5,9 @@ Changelog
 ----------------
 * collective.classifieds issue #7 fixed
 * code cleanup, removed obsolete imports and general cleanup
+* changed the way catalog indexes get created
+* added external url to classified
+* changed the way the deletion link works
 
 
 1.5b2 - Plone 4 compatibilty and tests

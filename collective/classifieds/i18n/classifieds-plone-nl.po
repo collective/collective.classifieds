@@ -170,4 +170,4 @@ msgid "marketplace_no_image_tile_label"
 msgstr "Geen afbeelding"
 
 msgid "classifieds_label_externalurl"
-msgid "Extern webadres"
+msgstr "Extern webadres"

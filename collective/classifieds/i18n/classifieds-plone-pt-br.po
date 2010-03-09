@@ -170,4 +170,4 @@ msgid "classifieds_classified_externalurl_description"
 msgstr "External endereço onde maiores informações podem ser encontradas no anúncio"
 
 msgid "classifieds_label_externalurl"
-msgid "Endereço externo"
+msgstr "Endereço externo"

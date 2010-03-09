@@ -170,4 +170,4 @@ msgid "classifieds_classified_externalurl_description"
 msgstr "Extern URL where more information about the classified can be found"
 
 msgid "classifieds_label_externalurl"
-msgid "External url"
+msgstr "External url"
