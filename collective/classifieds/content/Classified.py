@@ -90,6 +90,7 @@ schema = Schema((
             description_msgid="classifieds_classified_externalurl_description",
             i18n_domain='classifieds',
         ),
+        validators=('isURL',),
         required=False,
         searchable=False,
     ),

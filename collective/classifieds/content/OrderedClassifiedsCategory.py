@@ -58,7 +58,8 @@ schemata.finalizeATCTSchema(OrderedClassifiedsCategory_schema,
 
 class OrderedClassifiedsCategory(folder.ATFolder):
     """
-        Category which can contain Classifieds (such as books), Ordered version
+        Category which can contain Classifieds (such as books),
+        Ordered version
     """
     security = ClassSecurityInfo()
 
@@ -73,10 +74,6 @@ class OrderedClassifiedsCategory(folder.ATFolder):
         """Gets the path of the object"""
         path = '/'.join(self.getPhysicalPath())
         return path
-
-    def getParentTitle(self):
-        """Get parent title"""
-        return "%s" % (self.getParentNode().Title())
 
     def hasImage(self):
         """checks if the category has a image"""
