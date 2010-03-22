@@ -1,7 +1,12 @@
 Changelog
 =========
 
-1.5rc2 - Release candidate one
+1.5rc3 - Release candidate three
+----------------
+* fixed category tile image bug
+
+
+1.5rc2 - Release candidate two
 ----------------
 * allow normal categories to have images too
 * url validation added to url field

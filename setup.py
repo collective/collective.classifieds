@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.5rc2'
+version = '1.5rc3'
 
 setup(name='collective.classifieds',
       version=version,
