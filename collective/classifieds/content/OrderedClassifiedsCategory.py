@@ -89,9 +89,10 @@ class OrderedClassifiedsCategory(folder.ATFolder):
             imgtileurl = self.getCategoryimage().absolute_url(1) + '_tile'
             portal_url = portal_obj.absolute_url(1)
             imgtileurl = imgtileurl.replace(portal_url, '')
+            if imgtileurl[0] == "/":
+                imgtileurl = imgtileurl.replace('/', '', 1)
             return imgtileurl
         return ''
-
     # Methods
 
 registerType(OrderedClassifiedsCategory, PROJECTNAME)
