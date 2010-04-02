@@ -1,6 +1,10 @@
 Changelog
 =========
 
+1.5rc4 - Release candidate four
+----------------
+* added french translation done by [nicolas_wicikowski]
+
 1.5rc3 - Release candidate three
 ----------------
 * fixed category tile image bug
