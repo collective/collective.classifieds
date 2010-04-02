@@ -14,7 +14,7 @@ msgstr ""
 "Language-name: French\n"
 "Preferred-encodings: utf-8 latin1\n"
 "Domain: plone\n"
-"X-Is-Fallback-For: fr-fr \n"
+"X-Is-Fallback-For: fr-fr\n"
 
 msgid "classifieds_classified_image_description"
 msgstr "Photo/ image de l'annonce"
