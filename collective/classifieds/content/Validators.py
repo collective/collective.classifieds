@@ -39,5 +39,4 @@ class FloatValidator:
             return 1
 
         return translate('classifieds_invalid_float',
-                         'classifieds',
-                         context=self.request)
+                         'classifieds')
