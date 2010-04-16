@@ -1,6 +1,10 @@
 Changelog
 =========
 
+1.5rc5 - Release candidate five
+----------------
+* fixed bug with float validator, issue #9
+
 1.5rc4 - Release candidate four
 ----------------
 * added french translation done by [nicolas_wicikowski]
@@ -40,8 +44,8 @@ Changelog
 * proper integration test added
 * changed testbase
 * update version information
-* tested on plone 3.3 and plone 4 
- 
+* tested on plone 3.3 and plone 4
+
 
 
 
