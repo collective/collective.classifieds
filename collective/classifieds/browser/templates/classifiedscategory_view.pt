@@ -46,8 +46,10 @@
 
                 <h1 class="classified_title" tal:content="context/Title"></h1>
 
-                <div tal:content="context/Description"/>
+                <div class="classifiedcategory_description" tal:content="context/Description" />
 
+
+                <div class="classifiedcategory_text" tal:content="structure context/getText" />
 
                 <br />
                 <br />
