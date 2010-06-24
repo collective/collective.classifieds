@@ -25,11 +25,8 @@ class CatalogSearch:
             returns brains based on searchparameters
         """
         portal_catalog = getToolByName(self.context, "portal_catalog")
-
         try:
             results = portal_catalog(self.query)
-
         except:
             return ""
-
         return results
