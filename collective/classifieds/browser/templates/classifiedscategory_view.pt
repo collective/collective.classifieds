@@ -87,7 +87,7 @@
                                                 <tal:block i18n:translate="classifieds_resultsfound">results found</tal:block>
                                         </tal:block>
 
-                                        <table border="0" width="100%" class="listing">
+                                        <table class="listing classifiedstable">
                                                 <tr>
                                                         <th i18n:translate="classifieds_classifiedsclassified_label_image">
                                                                 Image
@@ -203,7 +203,7 @@
                                         </h2>
 
                                         <div tal:condition="python: listresults and not view.search()" tal:define="batch python:Batch(listresults, b_size, int(b_start), orphan=1);">
-                                                        <table border="0" width="100%" class="listing">
+                                                        <table class="listing classifiedstable">
                                                                 <tr>
                                                                         <th i18n:translate="classifieds_classifiedsclassified_label_image">
                                                                                 Image
@@ -279,7 +279,7 @@
                                                 <tal:block tal:content="context/Title">Title</tal:block>
                                         </h2>
 
-                                        <table border="0" width="100%" class="listing">
+                                        <table class="listing classifiedstable">
                                                 <tr>
                                                         <th>
                                                                 <tal:block i18n:translate="classifieds_classifiedscategories_image">Image</tal:block>

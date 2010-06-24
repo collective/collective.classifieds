@@ -42,7 +42,7 @@
 
 
                             <div tal:condition="python: listresults" tal:define="batch python:Batch(listresults, b_size, int(b_start), orphan=1);">
-                                            <table border="0" width="100%" class="listing">
+                                            <table class="listing classifiedstable">
                                                     <tr>
                                                             <th i18n:translate="classifieds_classifiedsclassified_label_image">
                                                                     Image

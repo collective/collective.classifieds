@@ -37,7 +37,7 @@
                     <tal:block tal:condition="python: view.getLatestClassifieds(10)">
                         <h2 class="classified_title" i18n:translate="classifieds_latest_classifieds">Latest classifieds</h2>
 
-                        <table border="0" width="100%" class="listing">
+                        <table class="listing classifiedstable">
                             <th i18n:translate="classifieds_classifiedsclassified_label_image">
                                         Image
                             </th>
@@ -92,7 +92,7 @@
                 <tal:block tal:condition="not:results">
                     <tal:block tal:condition="python: context.getFolderContents(contentFilter={'meta_type':['ClassifiedsCategory','OrderedClassifiedsCategory']})">
                         <h2 class="classified_title" i18n:translate="classifieds_browse_categories">Browse</h2>
-                        <table border="0" width="100%" class="listing">
+                        <table class="listing classifiedstable">
                             <tr>
                                 <th>
                                     <tal:block i18n:translate="classifieds_classifiedscategories_image">Image</tal:block>
@@ -149,7 +149,7 @@
 
                     <div tal:condition="results"
                              tal:define="batch python:Batch(results, b_size, int(b_start), orphan=1);">
-                        <table border="0" width="100%" class="listing">
+                        <table class="listing classifiedstable">
                             <tr>
                                 <th i18n:translate="classifieds_classifiedsclassified_label_image">
                                             Image

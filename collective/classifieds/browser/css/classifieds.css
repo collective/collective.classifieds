@@ -17,6 +17,11 @@
     float: right;
 }
 
+.classifiedstable {
+    border: 0px;
+    width: 100%;
+}
+
 .classified_image {
     padding-right: 10px;
     vertical-align: top;
