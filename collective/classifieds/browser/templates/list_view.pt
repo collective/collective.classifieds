@@ -142,8 +142,7 @@
                 <div tal:condition="results">
                     <h2 class="classified_title" i18n:translate="classifieds_results">Results</h2>
                     <tal:block i18n:translate="classifieds_you_searched_on">You searched on</tal:block>:
-                    <b>"
-                        <tal:block tal:content="request/frm_searchString">searchstring</tal:block>"
+                    <b>"<tal:block tal:content="request/frm_searchString">searchstring</tal:block>"
                     </b>,
                     <tal:block tal:content="python:len(results)">0</tal:block>
                     <tal:block i18n:translate="classifieds_resultsfound">results found</tal:block>

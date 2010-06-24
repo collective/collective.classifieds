@@ -177,7 +177,7 @@
                                 <span tal:condition="python:context.REQUEST.has_key('frm_searchString')">
                                         <h2 class="classified_title"  i18n:translate="classifieds_results">Results</h2>
                                         <span i18n:translate="classifieds_you_searched_on">You searched on</span>:
-                                        <b>"<span tal:content="request/frm_searchString">searchstring</span>"</b>,
+                                        <b>"<tal:block tal:content="request/frm_searchString">searchstring</tal:block>"</b>,
                                         0
                                         <span i18n:translate="classifieds_resultsfound">results found</span>
                                 </span>
