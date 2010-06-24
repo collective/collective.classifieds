@@ -1,6 +1,12 @@
 Changelog
 =========
 
+1.5 - Release 1.5
+----------------
+* classified categories have body text, template changes
+* classifieds container has body text, template changes
+* cleaned up templates and code
+
 1.5rc5 - Release candidate five
 ----------------
 * fixed bug with float validator, issue #9
