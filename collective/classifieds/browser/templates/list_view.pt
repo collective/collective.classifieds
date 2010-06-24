@@ -13,14 +13,8 @@
 
             <div tal:replace="structure provider:plone.abovecontenttitle" />
             <h1 class="classified_title" tal:content="context/Title"></h1>
-
-            <div tal:content="context/Description"/>
-
-            <div class="classifieds_description" tal:content="context/Description" />
-
-
+            <p class="documentDescription" tal:content="context/Description" />
             <div class="classifieds_text" tal:content="structure context/getText" />
-
 
             <br />
             <br />
