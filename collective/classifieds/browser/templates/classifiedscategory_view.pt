@@ -46,8 +46,8 @@
 
                 <h1 class="classified_title" tal:content="context/Title"></h1>
 
-                <p class="documentDescription" tal:content="context/Description" />
-                <div class="classifieds_text" tal:content="structure context/getText" />
+                <p class="documentDescription" tal:content="context/Description|nothing" />
+                <div class="classifieds_text" tal:content="structure context/getText|nothing" />
 
                 <br />
                 <br />
