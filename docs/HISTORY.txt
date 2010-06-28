@@ -1,6 +1,10 @@
 Changelog
 =========
 
+1.5.2 - Release 1.5.2
+----------------
+* Added spanish translations by David Torío Padrón
+
 1.5.1 - Release 1.5.1
 ----------------
 * Fixed broken template
