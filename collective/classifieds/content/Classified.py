@@ -130,7 +130,7 @@ class Classified(BaseContent, BrowserDefaultMixin):
             portal_url = getToolByName(self, 'portal_url').getPortalObject().absolute_url(1)
             imgtileurl = imgtileurl.replace(portal_url, '')
             return imgtileurl
-        return ''    
+        return ''
 
     def getClassifiedsCategory(self):
         """Get classifieds category"""
@@ -142,7 +142,6 @@ class Classified(BaseContent, BrowserDefaultMixin):
 
     def check_delete_permission(self):
         """Check if user may delete object"""
-
         if getSecurityManager().checkPermission("Delete objects", self):
             if getSecurityManager().getUser().getUserName() == self.getOwner().getId():
                 return True
@@ -151,12 +150,9 @@ class Classified(BaseContent, BrowserDefaultMixin):
     def delete(self):
         """Delete this object"""
         parent = self.aq_inner.aq_parent
-
         if self.check_delete_permission():
             parent._delObject(self.id)
-
             return self.REQUEST.RESPONSE.redirect( "%s?classified_title=%s&portal_status_message=%s" % (parent.absolute_url(), self.Title(), "has been deleted."))
-
         return self.REQUEST.RESPONSE.redirect( "%s?classified_title=%s&portal_status_message=%s %s" % (parent.absolute_url(), self.Title(), "has NOT been deleted."))
 
 registerType(Classified, PROJECTNAME)
