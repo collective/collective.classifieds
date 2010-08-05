@@ -1,7 +1,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.5.2'
+version = '1.5.3'
 
 setup(name='collective.classifieds',
       version=version,
@@ -25,7 +25,6 @@ setup(name='collective.classifieds',
       zip_safe=False,
       install_requires=[
           'setuptools',
-          # -*- Extra requirements: -*-
       ],
       entry_points="""
       # -*- Entry points: -*-
