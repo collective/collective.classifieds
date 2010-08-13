@@ -74,7 +74,7 @@
                                                                                     <a tal:attributes="href string:${item/getURL}" tal:content="item/Title">Name</a>
                                                                             </td>
                                                                             <td>
-                                                                                    <tal:block tal:condition="python:isinstance((context.price), float)" tal:content="python:'%0.2f' % context.price">price</tal:block>
+                                                                                    <tal:block tal:condition="python:isinstance((item.price), float)" tal:content="python:'%0.2f' % item.price">price</tal:block>
                                                                             </td>
                                                                     </tal:block>
                                                             </tr>
