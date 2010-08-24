@@ -1,6 +1,12 @@
 Changelog
 =========
 
+1.5.4 - Release 1.5.4
+----------------
+* Fixed wrong price in classifieds by author view
+* Minor template and CSS changes
+
+
 1.5.3 - Release 1.5.3
 ----------------
 * Fixed deletion bug, owner could not delete their own classifieds

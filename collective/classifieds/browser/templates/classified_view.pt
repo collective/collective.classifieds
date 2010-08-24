@@ -79,13 +79,16 @@
                             <a tal:attributes="href python:here.image_large.absolute_url()" target="_blank">
                                 <img tal:attributes="src python:here.image_mini.absolute_url()" />
                             </a>
+                            <a class="classified_image" tal:attributes="href python:here.additionalimage_large.absolute_url()" target="_blank">
+                                <img tal:attributes="src python:here.additionalimage_mini.absolute_url()" />
+                            </a>
                         </tal:block>
                     </td>
                     <td tal:condition="exists: here/additionalimage_large" class="classified_image">
-                        <a class="classified_image" tal:attributes="href python:here.additionalimage_large.absolute_url()" target="_blank">
+<!--                        <a class="classified_image" tal:attributes="href python:here.additionalimage_large.absolute_url()" target="_blank">
                             <img tal:attributes="src python:here.additionalimage_mini.absolute_url()" />
                         </a>
-
+-->
                     </td>
                 </tr>
                 <tr>
