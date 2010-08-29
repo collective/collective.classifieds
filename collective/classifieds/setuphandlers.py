@@ -3,29 +3,25 @@ __docformat__ = 'plaintext'
 
 import logging
 logger = logging.getLogger('Classifieds: setuphandlers')
-from collective.classifieds.config import PROJECTNAME
-from collective.classifieds.config import DEPENDENCIES
-import os
-from config import product_globals
-from Globals import package_home
 from Products.CMFCore.utils import getToolByName
-import transaction
 from Products.CMFPlone.utils import log
 
-from OFS.CopySupport import CopyContainer
 
 def isNotClassifiedsProfile(context):
     return context.readDataFile("Classifieds_marker.txt") is None
+
 
 def updateRoleMappings(context):
     """after workflow changed update the roles mapping. this is like pressing
     the button 'Update Security Setting' and portal_workflow"""
 
     # only for classifieds types
-    if isNotClassifiedsProfile(context): return
+    if isNotClassifiedsProfile(context):
+        return
     wft = getToolByName(context.getSite(), 'portal_workflow')
     wft.updateRoleMappings()
-    
+
+
 def addCatalogIndexes(context):
     """
         Adds catalog indexes to the portal catalog, instead of using
@@ -39,12 +35,13 @@ def addCatalogIndexes(context):
         log("Added FieldIndex for %s." % 'price')
     except:
         log('Error adding catalog index: price, maybe it allready exists')
-    
+
     try:
         catalog.addIndex('getImageTile', 'FieldIndex')
         log("Added FieldIndex for %s." % 'getImageTile')
     except:
-        log('Error adding catalog index: getImageTile, maybe it allready exists')
+        log('Error adding catalog index: getImageTile, \
+            maybe it allready exists')
 
     try:
         catalog.addIndex('hasImage', 'FieldIndex')
@@ -56,5 +53,5 @@ def addCatalogIndexes(context):
 def postInstall(context):
     """Called as at the end of the setup process. """
     # the right place for your custom code
-    if isNotClassifiedsProfile(context): return
-    site = context.getSite()
+    if isNotClassifiedsProfile(context):
+        return

@@ -18,8 +18,7 @@ schema = Schema((
             label="Category image",
             description="Image which represents the category",
             label_msgid="classifieds_classifiedscategory_categoryimage",
-            description_msgid=\
-            "classifieds_classifiedscategory_categoryimage_description",
+            description_msgid="classifieds_classifiedscategory_categoryimage_description",
             i18n_domain='classifieds',
         ),
         storage=AttributeStorage(),

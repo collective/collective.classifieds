@@ -31,7 +31,7 @@ msgstr "Foto/afbeelding van het artikel"
 msgid "classifieds_classified_additionalimage"
 msgstr "Aanvullende foto"
 
-msgid "classifieds_classified_additionalimage_description"
+msgid "classifieds_classified_additionalimage_desc"
 msgstr "Aanvullende foto/afbeelding van het artikel"
 
 msgid "classifieds_classified_price"

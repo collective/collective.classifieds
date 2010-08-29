@@ -16,6 +16,7 @@ schema = Schema((
 
 Classifieds_schema = BaseBTreeFolderSchema.copy() + schema.copy()
 
+
 class Classifieds(BaseBTreeFolder, BrowserDefaultMixin):
     """
         Container which can contain Categories and Classifieds
@@ -31,7 +32,7 @@ class Classifieds(BaseBTreeFolder, BrowserDefaultMixin):
 
     def getPath(self):
         """Gets the path of the object"""
-        path = '/'.join(self.getPhysicalPath());
+        path = '/'.join(self.getPhysicalPath())
         return path
 
 registerType(Classifieds, PROJECTNAME)

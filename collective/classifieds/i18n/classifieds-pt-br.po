@@ -30,7 +30,7 @@ msgstr "Imagem/foto do classificado"
 msgid "classifieds_classified_additionalimage"
 msgstr "Adicional imagem"
 
-msgid "classifieds_classified_additionalimage_description"
+msgid "classifieds_classified_additionalimage_desc"
 msgstr "Adicional Imagem/foto do classificado"
 
 msgid "classifieds_classified_price"

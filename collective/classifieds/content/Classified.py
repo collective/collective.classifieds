@@ -6,7 +6,7 @@ from Products.Archetypes.atapi import *
 from zope.interface import implements
 import interfaces
 from Products.CMFPlone import utils
-from Acquisition import aq_inner,aq_parent
+from Acquisition import aq_inner, aq_parent
 from AccessControl import getSecurityManager
 from Products.CMFCore.utils import getToolByName
 from Products.CMFDynamicViewFTI.browserdefault import BrowserDefaultMixin
@@ -38,14 +38,14 @@ schema = Schema((
             i18n_domain='classifieds',
         ),
         storage=AttributeStorage(),
-        max_size=(768,768),
-        sizes= {'large'   : (768, 768),
-                   'preview' : (400, 400),
-                   'mini'    : (200, 200),
-                   'thumb'   : (128, 128),
-                   'tile'    :  (64, 64),
-                   'icon'    :  (32, 32),
-                   'listing' :  (16, 16),
+        max_size=(768, 768),
+        sizes={'large': (768, 768),
+                   'preview': (400, 400),
+                   'mini': (200, 200),
+                   'thumb': (128, 128),
+                   'tile':  (64, 64),
+                   'icon':  (32, 32),
+                   'listing': (16, 16),
                   },
     ),
     ImageField(
@@ -54,18 +54,18 @@ schema = Schema((
             label="Additional image",
             description="Additional image of the classified",
             label_msgid="classifieds_classified_additionalimage",
-            description_msgid="classifieds_classified_additionalimage_description",
+            description_msgid="classifieds_classified_additionalimage_desc",
             i18n_domain='classifieds',
         ),
         storage=AttributeStorage(),
-        max_size=(768,768),
-        sizes= {'large'   : (768, 768),
-                   'preview' : (400, 400),
-                   'mini'    : (200, 200),
-                   'thumb'   : (128, 128),
-                   'tile'    :  (64, 64),
-                   'icon'    :  (32, 32),
-                   'listing' :  (16, 16),
+        max_size=(768, 768),
+        sizes={'large': (768, 768),
+                   'preview': (400, 400),
+                   'mini': (200, 200),
+                   'thumb': (128, 128),
+                   'tile': (64, 64),
+                   'icon': (32, 32),
+                   'listing': (16, 16),
                   },
     ),
     FloatField(
@@ -85,7 +85,8 @@ schema = Schema((
         name='externalurl',
         widget=StringWidget(
             label="External URL",
-            description="External URL to find more information about the classified",
+            description="External URL to find more information\
+                        about the classified",
             label_msgid="classifieds_classified_externalurl",
             description_msgid="classifieds_classified_externalurl_description",
             i18n_domain='classifieds',
@@ -99,6 +100,7 @@ schema = Schema((
 
 Classified_schema = BaseSchema.copy() + \
     schema.copy()
+
 
 class Classified(BaseContent, BrowserDefaultMixin):
     """
@@ -114,7 +116,7 @@ class Classified(BaseContent, BrowserDefaultMixin):
 
     def getPath(self):
         """Gets the path of the object"""
-        path = '/'.join(self.getPhysicalPath());
+        path = '/'.join(self.getPhysicalPath())
         return path
 
     def hasImage(self):
@@ -127,7 +129,8 @@ class Classified(BaseContent, BrowserDefaultMixin):
         """Get image tile url, relative to plone site."""
         if self.hasImage():
             imgtileurl = self.getImage().absolute_url(1) + '_tile'
-            portal_url = getToolByName(self, 'portal_url').getPortalObject().absolute_url(1)
+            portal_obj = getToolByName(self, 'portal_url').getPortalObject()
+            portal_url = portal_obj.absolute_url(1)
             imgtileurl = imgtileurl.replace(portal_url, '')
             return imgtileurl
         return ''
@@ -143,7 +146,8 @@ class Classified(BaseContent, BrowserDefaultMixin):
     def check_delete_permission(self):
         """Check if user may delete object"""
         if getSecurityManager().checkPermission("Delete objects", self):
-            if getSecurityManager().getUser().getUserName() == self.getOwner().getId():
+            username = getSecurityManager().getUser().getUserName()
+            if username == self.getOwner().getId():
                 return True
         return False
 
@@ -152,8 +156,8 @@ class Classified(BaseContent, BrowserDefaultMixin):
         parent = self.aq_inner.aq_parent
         if self.check_delete_permission():
             parent._delObject(self.id)
-            return self.REQUEST.RESPONSE.redirect( "%s?classified_title=%s&portal_status_message=%s" % (parent.absolute_url(), self.Title(), "has been deleted."))
-        return self.REQUEST.RESPONSE.redirect( "%s?classified_title=%s&portal_status_message=%s %s" % (parent.absolute_url(), self.Title(), "has NOT been deleted."))
+            return self.REQUEST.RESPONSE.redirect("%s?classified_title=%s&portal_status_message=%s" % (parent.absolute_url(), self.Title(), "has been deleted."))
+        return self.REQUEST.RESPONSE.redirect("%s?classified_title=%s&portal_status_message=%s %s" % (parent.absolute_url(), self.Title(), "has not been deleted."))
 
 registerType(Classified, PROJECTNAME)
 # end of class Classified

@@ -5,7 +5,7 @@ Changelog
 ----------------
 * Fixed wrong price in classifieds by author view
 * Minor template and CSS changes
-
+* Code cleanup and PEP8/Pyflakes fixes
 
 1.5.3 - Release 1.5.3
 ----------------

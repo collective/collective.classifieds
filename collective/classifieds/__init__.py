@@ -6,17 +6,12 @@ logger = logging.getLogger('Classifieds')
 logger.debug('Installing Product')
 from Products.Archetypes import listTypes
 from Products.Archetypes.atapi import *
-from Products.CMFCore import DirectoryView
 from Products.CMFCore import utils as cmfutils
 from config import *
 
 
 def initialize(context):
     """initialize product (called by zope)"""
-
-    # imports packages and types for registration
-    import content
-    import browser
 
     # Initialize portal content
     all_content_types, all_constructors, all_ftis = process_types(

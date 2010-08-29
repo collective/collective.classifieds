@@ -1,9 +1,10 @@
 /* Classifieds stylesheet */
 
-.classified_options {
+div.classified_options {
     border:1px solid #EAE8E8;
     float: right;
     padding: 10px;
+    margin-bottom: 10px;
     background-color: #EEF3F5;
 }
 
