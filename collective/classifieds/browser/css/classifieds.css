@@ -5,12 +5,12 @@ div.classified_options {
     float: right;
     padding: 10px;
     margin-bottom: 10px;
-    background-color: #EEF3F5;
+    background-color: #DDDDDD;
 }
 
 
 .classifiedcategory_image {
-    border:1px solid #EAE8E8;
+    border:1px solid #DDDDDD;
     padding: 1px;
     background-color: #EEF3F5;
     text-align: right;
@@ -28,7 +28,7 @@ div.classified_options {
 }
 
 .classified_image img {
-    border:1px solid #EAE8E8;
+    border:1px solid #DDDDDD;
 }
 
 
@@ -46,9 +46,14 @@ h2.classified_title {
 }
 
 img.image_tile {
-    border:1px solid #EAE8E8;
+    border:1px solid #DDDDDD;
 }
 
 tr.list_view {
     height: 64px;
+}
+
+
+table#classifieds-listing {
+    background-color: #DDDDDD;
 }
