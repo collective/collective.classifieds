@@ -25,6 +25,7 @@ setup(name='collective.classifieds',
       zip_safe=False,
       install_requires=[
           'setuptools',
+          'Products.CMFPlone',
       ],
       entry_points="""
       # -*- Entry points: -*-

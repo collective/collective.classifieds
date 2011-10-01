@@ -37,21 +37,22 @@
                     <tal:block tal:condition="python: view.getLatestClassifieds(10)">
                         <h2 class="classified_title" i18n:translate="classifieds_latest_classifieds">Latest classifieds</h2>
 
-                        <table class="listing classifiedstable" id="classifieds-table">
-                            <thead>
-                                <th i18n:translate="classifieds_classifiedsclassified_label_image">
-                                            Image
-                                </th>
-                                <th>
-                                    <tal:block i18n:translate="classifieds_classifieds">Classifieds</tal:block>
-                                </th>
-                                <th>
-                                    <tal:block i18n:translate="classifieds_classifiedsclassified_label_price">Price</tal:block>
+                        <table class="listing classifiedstable">
+                            <th i18n:translate="classifieds_classifiedsclassified_label_image">
+                                        Image
+                            </th>
+                            <th>
+                                <tal:block i18n:translate="classifieds_classifieds">Classifieds</tal:block>
+                            </th>
+                            <th>
+                                <tal:block i18n:translate="classifieds_classifiedsclassified_label_price">Price</tal:block>
 
-                                </th>
-                            </thead>
+                            </th>
 
                             <tbody>
+
+
+
                                 <tr tal:repeat="item python: view.getLatestClassifieds(10)" tal:attributes="class python:repeat['item'].odd()==1 and 'odd' or 'even'">
 
                                     <tal:block tal:condition="python:not portal.isExpired(item)">
@@ -87,24 +88,31 @@
 
                 <br />
 
-                <!-- list categories, no search -->
+                    <!-- list categories, no search -->
                 <tal:block tal:condition="not:results">
                     <tal:block tal:condition="python: context.getFolderContents(contentFilter={'meta_type':['ClassifiedsCategory','OrderedClassifiedsCategory']})">
                         <h2 class="classified_title" i18n:translate="classifieds_browse_categories">Browse</h2>
-                        <table class="listing classifiedstable" id="classifieds-table-nosearch">
-                            <thead>
+                        <table class="listing classifiedstable">
                             <tr>
                                 <th>
                                     <tal:block i18n:translate="classifieds_classifiedscategories_image">Image</tal:block>
                                 </th>
                                 <th>
                                     <tal:block i18n:translate="classifieds_classifiedscategories_label">ClassifiedsCategory</tal:block>
+
+                                    <a tal:condition="python:(context.REQUEST.get('sort_order')) != 'reverse' or not context.REQUEST.has_key('sort_order')"
+                                                          tal:attributes="href string:${here/absolute_url}?sort_order=reverse&sort_on=sortable_title">
+                                        [<tal:block i18n:translate="classifieds_sorting">sort</tal:block>]
+                                    </a>
+                                    <a tal:condition="python:(context.REQUEST.get('sort_order')=='reverse')"
+                                                          tal:attributes="href string:${here/absolute_url}?sort_on=sortable_title">
+                                        [<tal:block i18n:translate="classifieds_sorting">sort</tal:block>]
+                                    </a>
                                 </th>
                                 <th i18n:translate="classifieds_classifiedsclassified_label_description">
                                                     Description
                                 </th>
                             </tr>
-                            </thead>
                             <tbody>
                                 <tr tal:repeat="item python: context.getFolderContents(contentFilter={'meta_type':['ClassifiedsCategory','OrderedClassifiedsCategory'], 'sort_on':context.REQUEST.get('sort_on'), 'sort_order':context.REQUEST.get('sort_order')})" tal:attributes="class python:repeat['item'].odd()==1 and 'odd list_view' or 'even list_view'">
                                     <td>
@@ -148,15 +156,53 @@
                                 </th>
                                 <th tal:condition="python:not context.REQUEST.has_key('frm_searchString')">
                                     <tal:block i18n:translate="classifieds_classifieds_label">Classified</tal:block>
+                                    <a  tal:condition="python:(context.REQUEST.get('sort_order')) != 'reverse' or not context.REQUEST.has_key('sort_order')"
+                                             tal:attributes="href string:${here/absolute_url}?sort_order=reverse">
+                                        [<tal:block i18n:translate="classifieds_sorting">sort</tal:block>]
+                                    </a>
+                                    <a tal:condition="python:(context.REQUEST.get('sort_order')=='reverse')"
+                                             tal:attributes="href string:${here/absolute_url}">
+                                        [<tal:block i18n:translate="classifieds_sorting">sort</tal:block>]
+                                    </a>
                                 </th>
+
                                 <th tal:condition="python:context.REQUEST.has_key('frm_searchString')">
                                     <tal:block i18n:translate="classifieds_classifieds_label">Classified</tal:block>
+                                    <a tal:condition="python:(context.REQUEST.get('sort_order')) != 'reverse' or not context.REQUEST.has_key('sort_order')"
+                                        tal:attributes="href string:${here/absolute_url}?sort_order=reverse&frm_searchString=${request/frm_searchString}">
+                                        [<tal:block i18n:translate="classifieds_sorting">sort</tal:block>]
+                                    </a>
+                                    <a tal:condition="python:(context.REQUEST.get('sort_order')=='reverse')"
+                                             tal:attributes="href string:${here/absolute_url}?frm_searchString=${request/frm_searchString}">
+                                        [<tal:block i18n:translate="classifieds_sorting">sort</tal:block>]
+                                    </a>
                                 </th>
                                 <th tal:condition="python:not context.REQUEST.has_key('frm_searchString')">
                                     <tal:block i18n:translate="classifieds_classifiedsclassified_label_price">Price</tal:block>
+
+                                    <a  tal:condition="python:(context.REQUEST.get('sort_order')) != 'reverse' or not context.REQUEST.has_key('sort_order')"
+                                             tal:attributes="href string:${here/absolute_url}?sort_order=reverse&sort_on=price">
+                                        [<tal:block i18n:translate="classifieds_sorting">sort</tal:block>]
+
+                                    </a>
+                                    <a tal:condition="python:(context.REQUEST.get('sort_order')=='reverse')"
+                                             tal:attributes="href string:${here/absolute_url}?sort_on=price">
+                                        [<tal:block i18n:translate="classifieds_sorting">sort</tal:block>]
+                                    </a>
                                 </th>
+
                                 <th tal:condition="python:context.REQUEST.has_key('frm_searchString')">
                                     <tal:block i18n:translate="classifieds_classifiedsclassified_label_price">Price</tal:block>
+                                    <a tal:condition="python:(context.REQUEST.get('sort_order')) != 'reverse' or not context.REQUEST.has_key('sort_order')"
+                                             tal:attributes="href string:${here/absolute_url}?sort_order=reverse&frm_searchString=${request/frm_searchString}&sort_on=price">
+                                            [
+                                        <tal:block i18n:translate="classifieds_sorting">sort</tal:block>]
+                                    </a>
+                                    <a tal:condition="python:(context.REQUEST.get('sort_order')=='reverse')"
+                                             tal:attributes="href string:${here/absolute_url}?frm_searchString=${request/frm_searchString}&sort_on=price">
+                                            [
+                                        <tal:block i18n:translate="classifieds_sorting">sort</tal:block>]
+                                    </a>
                                 </th>
                             </tr>
                             <tbody>

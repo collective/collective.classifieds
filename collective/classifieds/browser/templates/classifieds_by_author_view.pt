@@ -42,8 +42,7 @@
 
 
                             <div tal:condition="python: listresults" tal:define="batch python:Batch(listresults, b_size, int(b_start), orphan=1);">
-                                            <table class="listing classifiedstable" id="classifieds-by-author">
-                                                <thead>
+                                            <table class="listing classifiedstable">
                                                     <tr>
                                                             <th i18n:translate="classifieds_classifiedsclassified_label_image">
                                                                     Image
@@ -57,30 +56,29 @@
 
                                                             </th>
                                                     </tr>
-                                                </thead>
-                                                <tbody>
-                                                        <tr tal:repeat="item batch" tal:attributes="class python:repeat['item'].odd()==1 and 'odd' or 'even'">
-                                                                <!-- isExpired checks if a item is expired -->
-                                                                <tal:block tal:condition="python:not portal.isExpired(item)">
-                                                                        <td>
-                                                                                <tal:block tal:condition="item/hasImage">
-                                                                                        <img class="image_tile" tal:attributes="src string:${portal_url}/${item/getImageTile}" />
+                                                    <tbody>
+                                                            <tr tal:repeat="item batch" tal:attributes="class python:repeat['item'].odd()==1 and 'odd' or 'even'">
+                                                                    <!-- isExpired checks if a item is expired -->
+                                                                    <tal:block tal:condition="python:not portal.isExpired(item)">
+                                                                            <td>
+                                                                                    <tal:block tal:condition="item/hasImage">
+                                                                                            <img class="image_tile" tal:attributes="src string:${portal_url}/${item/getImageTile}" />
 
-                                                                                </tal:block>
-                                                                                <tal:block tal:condition="not: item/getImageTile">
-                                                                                        <img class="image_tile" src="++resource++collective.classifieds.images/no_photo.jpg" />
-                                                                                        <span i18n:translate="marketplace_no_image_tile_label">No Image</span>
-                                                                                </tal:block>
-                                                                        </td>
-                                                                        <td>
-                                                                                <a tal:attributes="href string:${item/getURL}" tal:content="item/Title">Name</a>
-                                                                        </td>
-                                                                        <td>
-                                                                                <tal:block tal:condition="python:isinstance((item.price), float)" tal:content="python:'%0.2f' % item.price">price</tal:block>
-                                                                        </td>
-                                                                </tal:block>
-                                                        </tr>
-                                                </tbody>
+                                                                                    </tal:block>
+                                                                                    <tal:block tal:condition="not: item/getImageTile">
+                                                                                            <img class="image_tile" src="++resource++collective.classifieds.images/no_photo.jpg" />
+                                                                                            <span i18n:translate="marketplace_no_image_tile_label">No Image</span>
+                                                                                    </tal:block>
+                                                                            </td>
+                                                                            <td>
+                                                                                    <a tal:attributes="href string:${item/getURL}" tal:content="item/Title">Name</a>
+                                                                            </td>
+                                                                            <td>
+                                                                                    <tal:block tal:condition="python:isinstance((item.price), float)" tal:content="python:'%0.2f' % item.price">price</tal:block>
+                                                                            </td>
+                                                                    </tal:block>
+                                                            </tr>
+                                                    </tbody>
                                             </table>
                                     <span metal:use-macro="here/batch_macros/macros/navigation" />
                             </div>

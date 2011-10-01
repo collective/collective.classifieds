@@ -30,15 +30,19 @@
                                     <tal:block i18n:translate="classifieds_classified_has_been_deleted">has been deleted.</tal:block>
                             </dd>
                     </dl>
+
                 </div>
+
 
                 <span i18n:translate="classifieds_goto" class="classifieds_goto">Go to </span>
                 <a tal:attributes="href python: context.getParentNode().absolute_url()" tal:content="python: context.getParentNode().Title()">Category</a>
-                <tal:block tal:condition="context/hasImage|nothing">
-                                <a tal:attributes="href python:here.categoryimage_large.absolute_url()" target="_blank" class="classifiedcategory_image">
-                                    <img tal:attributes="src python:here.categoryimage_mini.absolute_url()" />
-                                </a>
-                </tal:block>
+
+
+                        <tal:block tal:condition="context/hasImage|nothing">
+                                        <a tal:attributes="href python:here.categoryimage_large.absolute_url()" target="_blank" class="classifiedcategory_image">
+                                            <img tal:attributes="src python:here.categoryimage_mini.absolute_url()" />
+                                        </a>
+                        </tal:block>
 
                 <h1 class="classified_title" tal:content="context/Title"></h1>
 
@@ -83,8 +87,7 @@
                                                 <tal:block i18n:translate="classifieds_resultsfound">results found</tal:block>
                                         </tal:block>
 
-                                        <table class="listing classifiedstable" id="classifieds-table">
-                                            <thead>
+                                        <table class="listing classifiedstable">
                                                 <tr>
                                                         <th i18n:translate="classifieds_classifiedsclassified_label_image">
                                                                 Image
@@ -92,36 +95,75 @@
                                                         <th>
                                                                 <tal:block i18n:translate="classifieds_classifieds_label">Results</tal:block>
 
+                                                                <tal:block tal:condition="python:not context.REQUEST.has_key('frm_searchString')">
+                                                                        <a tal:condition="python:(context.REQUEST.get('sort_order')) != 'reverse' or not context.REQUEST.has_key('sort_order')"
+                                                                             tal:attributes="href string:${here/absolute_url}?sort_order=reverse">
+                                                                            [<span i18n:translate="classifieds_sorting">sort</span>]
+                                                                        </a>
+                                                                        <a tal:condition="python:(context.REQUEST.get('sort_order')=='reverse')"
+                                                                             tal:attributes="href string:${here/absolute_url}">
+                                                                            [<span i18n:translate="classifieds_sorting">sort</span>]
+                                                                        </a>
+                                                                </tal:block>
+                                                                <tal:block tal:condition="python:context.REQUEST.has_key('frm_searchString')">
+                                                                        <a tal:condition="python:(context.REQUEST.get('sort_order')) != 'reverse' or not context.REQUEST.has_key('sort_order')"
+                                                                             tal:attributes="href string:${here/absolute_url}?sort_order=reverse&frm_searchString=${request/frm_searchString}">
+                                                                            [<span i18n:translate="classifieds_sorting">sort</span>]
+                                                                        </a>
+                                                                        <a tal:condition="python:(context.REQUEST.get('sort_order')=='reverse')"
+                                                                             tal:attributes="href string:${here/absolute_url}?frm_searchString=${request/frm_searchString}">
+                                                                            [<span i18n:translate="classifieds_sorting">sort</span>]
+                                                                        </a>
+                                                                </tal:block>
                                                         </th>
                                                         <th>
                                                                 <tal:block i18n:translate="classifieds_classifiedsclassified_label_price">Price</tal:block>
+                                                                <tal:block tal:condition="python:not context.REQUEST.has_key('frm_searchString')">
+                                                                        <a tal:condition="python:(context.REQUEST.get('sort_order')) != 'reverse' or not context.REQUEST.has_key('sort_order')"
+                                                                             tal:attributes="href string:${here/absolute_url}?sort_order=reverse&sort_on=price">
+                                                                            [<span i18n:translate="classifieds_sorting">sort</span>]
+                                                                        </a>
+                                                                        <a tal:condition="python:(context.REQUEST.get('sort_order')=='reverse')"
+                                                                             tal:attributes="href string:${here/absolute_url}?sort_on=price">
+                                                                            [<span i18n:translate="classifieds_sorting">sort</span>]
+                                                                        </a>
+                                                                </tal:block>
+                                                                <tal:block tal:condition="python:context.REQUEST.has_key('frm_searchString')">
+                                                                        <a tal:condition="python:(context.REQUEST.get('sort_order')) != 'reverse' or not context.REQUEST.has_key('sort_order')"
+                                                                             tal:attributes="href string:${here/absolute_url}?sort_order=reverse&frm_searchString=${request/frm_searchString}&sort_on=price">
+                                                                            [<span i18n:translate="classifieds_sorting">sort</span>]
+                                                                        </a>
+                                                                        <a tal:condition="python:(context.REQUEST.get('sort_order')=='reverse')"
+                                                                             tal:attributes="href string:${here/absolute_url}?frm_searchString=${request/frm_searchString}&sort_on=price">
+                                                                            [<span i18n:translate="classifieds_sorting">sort</span>]
+                                                                        </a>
+                                                                </tal:block>
                                                         </th>
                                                 </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr tal:repeat="item batch" tal:attributes="class python:repeat['item'].odd()==1 and 'odd' or 'even'">
-                                                    <tal:block tal:condition="python:not portal.isExpired(item)">
-                                                            <td>
-                                                                    <tal:block tal:condition="item/hasImage">
+                                                <tbody>
+                                                        <tr tal:repeat="item batch" tal:attributes="class python:repeat['item'].odd()==1 and 'odd' or 'even'">
+                                                                <tal:block tal:condition="python:not portal.isExpired(item)">
+                                                                        <td>
+                                                                                <tal:block tal:condition="item/hasImage">
 
-                                                                            <img class="image_tile" tal:attributes="src string:${portal_url}/${item/getImageTile}" />
+                                                                                        <img class="image_tile" tal:attributes="src string:${portal_url}/${item/getImageTile}" />
 
-                                                                    </tal:block>
-                                                                    <tal:block tal:condition="not: item/getImageTile">
-                                                                            <img class="image_tile" src="++resource++collective.classifieds.images/no_photo.jpg" />
-                                                                            <span i18n:translate="marketplace_no_image_tile_label">No Image</span>
-                                                                    </tal:block>
-                                                            </td>
-                                                            <td>
-                                                                    <img tal:attributes="src item/getIcon" />
-                                                                    <a tal:attributes="href string:${item/getURL}" tal:content="item/Title">Name</a>
-                                                            </td>
-                                                            <td>
-                                                                    <tal:block tal:condition="python:isinstance(item.price, float)" tal:content="python:'%0.2f' % item.price">price</tal:block>
-                                                            </td>
-                                                    </tal:block>
-                                                </tr>
-                                            </tbody>
+                                                                                </tal:block>
+                                                                                <tal:block tal:condition="not: item/getImageTile">
+                                                                                        <img class="image_tile" src="++resource++collective.classifieds.images/no_photo.jpg" />
+                                                                                        <span i18n:translate="marketplace_no_image_tile_label">No Image</span>
+                                                                                </tal:block>
+                                                                        </td>
+                                                                        <td>
+                                                                                <img tal:attributes="src item/getIcon" />
+                                                                                <a tal:attributes="href string:${item/getURL}" tal:content="item/Title">Name</a>
+                                                                        </td>
+                                                                        <td>
+                                                                                <tal:block tal:condition="python:isinstance(item.price, float)" tal:content="python:'%0.2f' % item.price">price</tal:block>
+                                                                        </td>
+                                                                </tal:block>
+                                                        </tr>
+                                                </tbody>
                                         </table>
 
                                         <!-- show batch/paging navigation -->
@@ -161,52 +203,66 @@
                                         </h2>
 
                                         <div tal:condition="python: listresults and not view.search()" tal:define="batch python:Batch(listresults, b_size, int(b_start), orphan=1);">
-                                            <table class="listing classifiedstable">
-                                                <thead>
-                                                    <tr>
-                                                            <th i18n:translate="classifieds_classifiedsclassified_label_image">
-                                                                    Image
-                                                            </th>
-                                                            <th>
-                                                                    <tal:block i18n:translate="classifieds_classifiedsclassified_label_classifieds_in_this_category">Classifieds in this category</tal:block>
-                                                                    <tal:block tal:content="context/Title"></tal:block>
+                                                        <table class="listing classifiedstable">
+                                                                <tr>
+                                                                        <th i18n:translate="classifieds_classifiedsclassified_label_image">
+                                                                                Image
+                                                                        </th>
+                                                                        <th>
+                                                                                <tal:block i18n:translate="classifieds_classifiedsclassified_label_classifieds_in_this_category">Classifieds in this category</tal:block>
+                                                                                <tal:block tal:content="context/Title"></tal:block>
 
-                                                            </th>
-                                                            <th>
-                                                                    <tal:block i18n:translate="classifieds_classifiedsclassified_label_price">Price</tal:block>
+                                                                                <a tal:condition="python:(context.REQUEST.get('sort_order')) != 'reverse' or not context.REQUEST.has_key('sort_order')"
+                                                                                     tal:attributes="href string:${here/absolute_url}?sort_order=reverse&sort_on=sortable_title">
+                                                                                    [<span i18n:translate="classifieds_sorting">sort</span>]
+                                                                                </a>
+                                                                                <a tal:condition="python:(context.REQUEST.get('sort_order')=='reverse')"
+                                                                                     tal:attributes="href string:${here/absolute_url}?sort_on=sortable_title">
+                                                                                    [<span i18n:translate="classifieds_sorting">sort</span>]
+                                                                                </a>
+                                                                        </th>
+                                                                        <th>
+                                                                                <tal:block i18n:translate="classifieds_classifiedsclassified_label_price">Price</tal:block>
+                                                                                <a tal:condition="python:(context.REQUEST.get('sort_order')) != 'reverse' or not context.REQUEST.has_key('sort_order')"
+                                                                                     tal:attributes="href string:${here/absolute_url}?sort_order=reverse&sort_on=price">
+                                                                                    [<span i18n:translate="classifieds_sorting">sort</span>]
+                                                                                </a>
+                                                                                <a tal:condition="python:(context.REQUEST.get('sort_order')=='reverse')"
+                                                                                     tal:attributes="href string:${here/absolute_url}?sort_on=price">
+                                                                                    [<tal:block i18n:translate="classifieds_sorting">sort</tal:block>]
+                                                                                </a>
 
-                                                            </th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                        <tr tal:repeat="item batch" tal:attributes="class python:repeat['item'].odd()==1 and 'odd' or 'even'">
-                                                                <!-- isExpired checks if a item is expired -->
-                                                                <tal:block tal:condition="python:not portal.isExpired(item)">
-                                                                        <td>
-                                                                                <tal:block tal:condition="item/hasImage">
+                                                                        </th>
+                                                                </tr>
+                                                                <tbody>
+                                                                        <tr tal:repeat="item batch" tal:attributes="class python:repeat['item'].odd()==1 and 'odd' or 'even'">
+                                                                                <!-- isExpired checks if a item is expired -->
+                                                                                <tal:block tal:condition="python:not portal.isExpired(item)">
+                                                                                        <td>
+                                                                                                <tal:block tal:condition="item/hasImage">
 
-                                                                                        <img class="image_tile" tal:attributes="src string:${portal_url}/${item/getImageTile}" />
+                                                                                                        <img class="image_tile" tal:attributes="src string:${portal_url}/${item/getImageTile}" />
 
 
+                                                                                                </tal:block>
+                                                                                                <tal:block tal:condition="not: item/getImageTile">
+                                                                                                        <img class="image_tile" src="++resource++collective.classifieds.images/no_photo.jpg" />
+                                                                                                        <span i18n:translate="marketplace_no_image_tile_label">No Image</span>
+                                                                                                </tal:block>
+                                                                                        </td>
+
+                                                                                        <td>
+                                                                                                <img tal:attributes="src item/getIcon" />
+                                                                                                <a tal:attributes="href string:${item/getURL}" tal:content="item/Title">Name</a>
+                                                                                        </td>
+                                                                                        <td>
+                                                                                                <tal:block tal:condition="python:isinstance((item['price']), float)" tal:content="python:'%0.2f' % item['price']">price</tal:block>
+
+                                                                                        </td>
                                                                                 </tal:block>
-                                                                                <tal:block tal:condition="not: item/getImageTile">
-                                                                                        <img class="image_tile" src="++resource++collective.classifieds.images/no_photo.jpg" />
-                                                                                        <span i18n:translate="marketplace_no_image_tile_label">No Image</span>
-                                                                                </tal:block>
-                                                                        </td>
-
-                                                                        <td>
-                                                                                <img tal:attributes="src item/getIcon" />
-                                                                                <a tal:attributes="href string:${item/getURL}" tal:content="item/Title">Name</a>
-                                                                        </td>
-                                                                        <td>
-                                                                                <tal:block tal:condition="python:isinstance((item['price']), float)" tal:content="python:'%0.2f' % item['price']">price</tal:block>
-
-                                                                        </td>
-                                                                </tal:block>
-                                                        </tr>
-                                                </tbody>
-                                            </table>
+                                                                        </tr>
+                                                                </tbody>
+                                                        </table>
                                                 <!-- show batch/paging navigation -->
                                                 <tal:block metal:use-macro="here/batch_macros/macros/navigation" />
                                         </div>
@@ -225,35 +281,43 @@
 
                                         <table class="listing classifiedstable">
                                                 <tr>
-                                                    <th>
-                                                            <tal:block i18n:translate="classifieds_classifiedscategories_image">Image</tal:block>
-                                                    </th>
-                                                    <th>
-                                                            <span i18n:translate="classifieds_classifiedsclassified_label_categories_in_this_category">Categories in this category</span>
-                                                            <span tal:content="context/Title"></span>
-                                                            <a tal:condition="python:(context.REQUEST.get('sort_category_order')=='reverse')"
-                                                                 tal:attributes="href string:${here/absolute_url}?sort_on=sortable_title&sort_category_order=normal">
-                                                                [<span i18n:translate="classifieds_sorting">sort</span>]
-                                                            </a>
-                                                    </th>
-                                                    <th i18n:translate="classifieds_classifiedsclassified_label_description">
-                                                        Description
-                                                    </th>
+                                                        <th>
+                                                                <tal:block i18n:translate="classifieds_classifiedscategories_image">Image</tal:block>
+                                                        </th>
+                                                        <th>
+                                                                <span i18n:translate="classifieds_classifiedsclassified_label_categories_in_this_category">Categories in this category</span>
+                                                                <span tal:content="context/Title"></span>
+                                                                <a tal:condition="python:(context.REQUEST.get('sort_category_order')) == 'normal' or not context.REQUEST.has_key('sort_category_order')"
+                                                                     tal:attributes="href string:${here/absolute_url}?sort_category_order=reverse&sort_on=sortable_title">
+                                                                    [<span i18n:translate="classifieds_sorting">sort</span>]
+                                                                </a>
+                                                                <a tal:condition="python:(context.REQUEST.get('sort_category_order')=='reverse')"
+                                                                     tal:attributes="href string:${here/absolute_url}?sort_on=sortable_title&sort_category_order=normal">
+                                                                    [<span i18n:translate="classifieds_sorting">sort</span>]
+                                                                </a>
+                                                        </th>
+                                                <th i18n:translate="classifieds_classifiedsclassified_label_description">
+                                                    Description
+                                                </th>
                                                 </tr>
+
                                                 <tbody>
-                                                    <tr tal:repeat="item python: context.getFolderContents(contentFilter={'meta_type':['ClassifiedsCategory','OrderedClassifiedsCategory'],'sort_on':'sortable_title', 'sort_order':context.REQUEST.get('sort_category_order')})" tal:attributes="class python:repeat['item'].odd()==1 and 'odd' or 'even'">
-                                                        <td>
-                                                                <img class="image_tile" tal:attributes="src python:item.getImageTile" />
-                                                        </td>
-                                                        <td>
-                                                                <img class="image_tile" tal:attributes="src item/getIcon" />
-                                                                <a tal:attributes="href string:${item/getURL}" tal:content="item/Title">Name</a>
-                                                                (<span id="classifieds_classified_amount" tal:content="python: view.getNumberOfClassifieds(item)" />)
-                                                        </td>
-                                                        <td>
-                                                                <tal:block tal:content="item/Description">Description</tal:block>
-                                                        </td>
-                                                    </tr>
+
+
+                                                        <tr tal:repeat="item python: context.getFolderContents(contentFilter={'meta_type':['ClassifiedsCategory','OrderedClassifiedsCategory'],'sort_on':'sortable_title', 'sort_order':context.REQUEST.get('sort_category_order')})" tal:attributes="class python:repeat['item'].odd()==1 and 'odd' or 'even'">
+                                                                <td>
+
+                                                                        <img class="image_tile" tal:attributes="src python:item.getImageTile" />
+
+                                                                </td>
+                                                                <td>
+                                                                        <img class="image_tile" tal:attributes="src item/getIcon" />
+                                                                        <a tal:attributes="href string:${item/getURL}" tal:content="item/Title">Name</a>
+                                                                        (<span id="classifieds_classified_amount" tal:content="python: view.getNumberOfClassifieds(item)" />)
+                                                                </td>
+                                                                <td>
+                                                                        <tal:block tal:content="item/Description">Description</tal:block>
+                                                                </td>                                                        </tr>
                                                 </tbody>
                                         </table>
 

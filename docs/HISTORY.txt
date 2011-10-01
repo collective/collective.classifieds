@@ -2,9 +2,8 @@ Changelog
 =========
 
 1.5.5 - Release 1.5.5
+* Made add-on Plone 4.1 compatible
 * Added Added Czech translations [naro]
-* Added javascript table sorting
-* Clean up templates
 
 1.5.4 - Release 1.5.4
 ----------------

@@ -20,15 +20,18 @@
                         <tal:block i18n:translate="classified_label_placedby">
                             Classified placed by
                         </tal:block>:
-                        <a tal:attributes="href string:${here/absolute_url}/author/${here/Creator}">
-                            <tal:block tal:content="string:${authorName}">author</tal:block>
-                        </a>
+                        <a tal:attributes="href string:${here/absolute_url}/author/${here/Creator}"><tal:block tal:content="string:${authorName}">author</tal:block></a>
+
+
+
                         <tal:block i18n:translate="classifieds_classifiedsclassified_label_placed_at">
                             on
                         </tal:block>:
+
                         <b tal:content="string:$modificationDate">date</b>
                     </li>
                     <li>
+
                         <a i18n:translate="classifieds_classifieds_view" tal:attributes="href string:${here/absolute_url}/classifiedsclassified_by_author_view?author=${here/Creator}">View</a>
                         <tal:block i18n:translate="classifieds_classifieds_all_created_by">all classifieds created by</tal:block>
                         <tal:block tal:content="authorName">authorName</tal:block>
@@ -36,6 +39,7 @@
 
                     <tal:block tal:define="member python:mtool.getMemberById(creator);
                                                         authormail python:member.getProperty('email')">
+
                         <tal:block tal:condition="python: len(authormail) > 0">
 
                             <li>
@@ -47,23 +51,17 @@
                         </tal:block>
                     </tal:block>
 
+
                     <tal:block tal:condition="here/check_delete_permission">
                     <li>
-                        <a href="delete"
-                           i18n:translate="classifieds_classified_delete"
-                           tal:attributes="href string:${here/absolute_url}/delete">
-                            Delete classified
-                        </a>
+                        <a href="delete" i18n:translate="classifieds_classified_delete" tal:attributes="href string:${here/absolute_url}/delete">Delete classified</a>
                     </li>
                     </tal:block>
                 </ul>
             </div>
 
             <tal:block i18n:translate="classifieds_goto">Go to</tal:block>
-            <a tal:attributes="href python: context.getParentNode().absolute_url()"
-               tal:content="context/getClassifiedsCategory">
-                Content
-            </a>
+            <a tal:attributes="href python: context.getParentNode().absolute_url()" tal:content="context/getClassifiedsCategory">Content</a>
             <br />
 
             <h1 class="classified_title">
@@ -75,7 +73,6 @@
             <br />
 
             <table cellpadding="0" cellspacing="0">
-                <tbody>
                 <tr>
                     <td class="classified_image">
                         <tal:block tal:condition="context/hasImage">
@@ -87,6 +84,12 @@
                                 <img tal:attributes="src python:here.additionalimage_mini.absolute_url()" />
                             </a>
                         </tal:block>
+                    </td>
+                    <td tal:condition="exists: here/additionalimage_large" class="classified_image">
+<!--                        <a class="classified_image" tal:attributes="href python:here.additionalimage_large.absolute_url()" target="_blank">
+                            <img tal:attributes="src python:here.additionalimage_mini.absolute_url()" />
+                        </a>
+-->
                     </td>
                 </tr>
                 <tr>
@@ -100,7 +103,6 @@
                         <br />
                     </td>
                 </tr>
-                </tbody>
             </table>
             <h2 class="classified_title" i18n:translate="classifieds_label_classifiedscategory">Classifieds Category</h2>
             <a tal:attributes="href python: context.getParentNode().absolute_url()" tal:content="context/getClassifiedsCategory">Content</a>
