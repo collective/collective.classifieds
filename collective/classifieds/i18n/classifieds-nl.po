@@ -3,8 +3,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Classifieds\n"
 "POT-Creation-Date: 2008-10-10 09:05+0100\n"
-"PO-Revision-Date: 2009-11-13 11:42+0100\n"
-"Last-Translator: ralph <ralph@fourdigits.nl>\n"
+"PO-Revision-Date: 2011-12-30 16:48+0100\n"
+"Last-Translator: Ralph Jacobs <ralph@fourdigits.nl>\n"
 "Language-Team: Four Digits <support@fourdigits.nl>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -43,21 +43,6 @@ msgstr "Prijs van het artikel"
 msgid "classifieds_classifieds"
 msgstr "Advertenties"
 
-msgid "classifieds_classified_description"
-msgstr "Omschrijving"
-
-msgid "classifieds_classified_description_description"
-msgstr "Omschrijving"
-
-msgid "classifieds_classified_price"
-msgstr "Prijs"
-
-msgid "classifieds_classified_price_description"
-msgstr "Prijs van het artikel"
-
-msgid "classifieds_classifieds"
-msgstr "Advertenties"
-
 msgid "classifieds_you_searched_on"
 msgstr "U heeft gezocht op"
 
@@ -72,18 +57,6 @@ msgstr "Alle advertenties aangemaakt door"
 
 msgid "classifieds_classifieds_all_created_by_go_back"
 msgstr "Ga terug"
-
-msgid "classifieds_classifieds"
-msgstr "Advertenties"
-
-msgid "classifieds_you_searched_on"
-msgstr "U heeft gezocht op"
-
-msgid "classifieds_resultsfound"
-msgstr "resultaten gevonden"
-
-msgid "classifieds_classifieds_all_created_by"
-msgstr "alle advertenties aangemaakt door"
 
 msgid "classifieds_invalid_float"
 msgstr "Geef een numerieke waarde op"
@@ -102,3 +75,4 @@ msgstr "Extern webadres"
 
 msgid "classifieds_classified_externalurl_description"
 msgstr "Extern adres waar meer informatie over de advertentie gevonden kan worden"
+
