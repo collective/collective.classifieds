@@ -1,4 +1,4 @@
-__author__ = """Four Digits <unknown>"""
+__author__ = """Four Digits <ralph@fourdigits.nl>"""
 __docformat__ = 'plaintext'
 
 import logging
