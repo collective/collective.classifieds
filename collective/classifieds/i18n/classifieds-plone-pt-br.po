@@ -21,9 +21,6 @@ msgstr "Imagem do classificado"
 msgid "Classifieds"
 msgstr "Classificados"
 
-msgid "Classifieds"
-msgstr "Classificados (com o fim)"
-
 msgid "ClassifiedsCategory"
 msgstr "Categoria"
 

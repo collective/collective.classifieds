@@ -42,50 +42,17 @@ msgstr "Preço do classificado"
 msgid "classifieds_classifieds"
 msgstr "Classificados"
 
-msgid "classifieds_classified_description"
-msgstr "Descrição"
-
-msgid "classifieds_classified_description_description"
-msgstr "Descrição"
-
-msgid "classifieds_classified_image"
-msgstr "Imagem"
-
-msgid "classifieds_classified_image_description"
-msgstr "Imagem/foto do classificado"
-
-msgid "classifieds_classified_price"
-msgstr "Preço"
-
-msgid "classifieds_classified_price_description"
-msgstr "Preço do classificado"
-
-msgid "classifieds_classifieds"
-msgstr "Classificados"
-
 msgid "classifieds_you_searched_on"
 msgstr "Você buscou em"
 
 msgid "classifieds_resultsfound"
 msgstr "resultado(s) encontrado(s)"
-
-msgid "classifieds_classifieds_all_created_by"
-msgstr "Todos os classificados criados por"
 
 msgid "classifieds_classifieds_all_created_by_header"
 msgstr "Todos os classificados criados por"
 
 msgid "classifieds_classifieds_all_created_by_go_back"
 msgstr "Voltar"
-
-msgid "classifieds_classifieds"
-msgstr "Classificados"
-
-msgid "classifieds_you_searched_on"
-msgstr "Você buscou em"
-
-msgid "classifieds_resultsfound"
-msgstr "resultado(s) encontrado(s)"
 
 msgid "classifieds_classifieds_all_created_by"
 msgstr "Todos os classificados criados por"
@@ -95,4 +62,3 @@ msgstr "Por favor informe um valor numérico"
 
 msgid "classifieds_results"
 msgstr "Resultados da busca"
-
