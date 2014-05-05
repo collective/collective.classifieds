@@ -26,8 +26,24 @@ setup(name='collective.classifieds',
       include_package_data=True,
       zip_safe=False,
       install_requires=[
+          'AccessControl',
+          'Acquisition',
+          'Products.Archetypes',
+          'Products.ATContentTypes',
+          'Products.CMFCore',
+          'Products.CMFPlone',
+          'Products.GenericSetup',
+          'Products.validation',
           'setuptools',
+          'zope.i18n',
+          'zope.interface',
       ],
+      extras_require={
+          'test': [
+              'Products.PloneTestCase',
+              'zope.testing',
+          ],
+      },
       entry_points="""
       # -*- Entry points: -*-
       """,

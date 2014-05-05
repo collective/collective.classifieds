@@ -1,6 +1,13 @@
 Changelog
 =========
 
+1.7 (unreleased)
+----------------
+
+- Fix package dependencies.
+  [hvelarde]
+
+
 1.6 - Release 1.6
 -----------------
 * Tested with Plone 4.1.3
