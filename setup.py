@@ -36,6 +36,7 @@ setup(name='collective.classifieds',
           'Products.validation',
           'setuptools',
           'zope.i18n',
+          'zope.i18nmessageid',
           'zope.interface',
       ],
       extras_require={
