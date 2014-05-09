@@ -8,6 +8,9 @@ from Products.Archetypes import listTypes
 from Products.Archetypes.atapi import *
 from Products.CMFCore import utils as cmfutils
 from config import *
+from zope.i18nmessageid import MessageFactory
+
+_ = MessageFactory('collective.classifieds')
 
 
 def initialize(context):

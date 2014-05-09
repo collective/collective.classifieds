@@ -2,7 +2,7 @@ import re
 from Products.validation.interfaces import ivalidator
 from Products.validation.interfaces.IValidator import IValidator
 from zope.interface import implements
-from zope.i18n import translate
+from collective.classifieds import _
 
 try:
     # Plone 4 and higher
@@ -38,5 +38,4 @@ class FloatValidator:
         else:
             return 1
 
-        return translate('classifieds_invalid_float',
-                         'classifieds')
+        return _(u'classifieds_invalid_float', default=u'Please enter a valid numeric value')

@@ -10,16 +10,20 @@ from Products.Archetypes.public import registerType
 from Products.CMFDynamicViewFTI.browserdefault import BrowserDefaultMixin
 from Products.CMFCore.utils import getToolByName
 from collective.classifieds.config import *
+from collective.classifieds import _
 
 schema = Schema((
     ImageField(
         name='categoryimage',
         widget=ImageField._properties['widget'](
-            label="Category image",
-            description="Image which represents the category",
-            label_msgid="classifieds_classifiedscategory_categoryimage",
-            description_msgid="classifieds_classifiedscategory_categoryimage_description",
-            i18n_domain='classifieds',
+            label=_(
+                u'classifieds_classifiedscategory_categoryimage',
+                default=u'Category image',
+            ),
+            description=_(
+                u'classifieds_classifiedscategory_categoryimage_description',
+                default=u'Image which represents the category',
+            ),
         ),
         storage=AttributeStorage(),
         max_size=(768, 768),

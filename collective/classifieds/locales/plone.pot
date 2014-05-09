@@ -1,0 +1,103 @@
+# --- PLEASE EDIT THE LINES BELOW CORRECTLY ---
+# SOME DESCRIPTIVE TITLE.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"POT-Creation-Date: 2014-05-09 20:01+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI +ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: en\n"
+"Language-Name: English\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: plone\n"
+
+#: collective/classifieds/browser/templates/classifiedscategory_view.pt:28
+msgid "Classified"
+msgstr ""
+
+#: collective/classifieds/profiles/default/workflows/classifieds_onestate_workflow/definition.xml
+msgid "Published"
+msgstr ""
+
+#. Default: "Additional image"
+#: collective/classifieds/content/Classified.py:60
+msgid "classifieds_classified_additionalimage"
+msgstr ""
+
+#. Default: "Additional image of the classified"
+#: collective/classifieds/content/Classified.py:64
+msgid "classifieds_classified_additionalimage_desc"
+msgstr ""
+
+#. Default: "Description"
+#: collective/classifieds/content/Classified.py:21
+msgid "classifieds_classified_description"
+msgstr ""
+
+#. Default: "Description of the classified"
+#: collective/classifieds/content/Classified.py:25
+msgid "classifieds_classified_description_description"
+msgstr ""
+
+#. Default: "External URL"
+#: collective/classifieds/content/Classified.py:99
+msgid "classifieds_classified_externalurl"
+msgstr ""
+
+#. Default: "External URL to find more information about the classified"
+#: collective/classifieds/content/Classified.py:103
+msgid "classifieds_classified_externalurl_description"
+msgstr ""
+
+#. Default: "has been deleted."
+#: collective/classifieds/browser/templates/classifiedscategory_view.pt:30
+msgid "classifieds_classified_has_been_deleted"
+msgstr ""
+
+#. Default: "Image"
+#: collective/classifieds/content/Classified.py:37
+msgid "classifieds_classified_image"
+msgstr ""
+
+#. Default: "Image of the classified"
+#: collective/classifieds/content/Classified.py:41
+msgid "classifieds_classified_image_description"
+msgstr ""
+
+#. Default: "Price"
+#: collective/classifieds/content/Classified.py:83
+msgid "classifieds_classified_price"
+msgstr ""
+
+#. Default: "Price of the classified"
+#: collective/classifieds/content/Classified.py:87
+msgid "classifieds_classified_price_description"
+msgstr ""
+
+#. Default: "Category image"
+#: collective/classifieds/content/ClassifiedsCategory.py:19
+#: collective/classifieds/content/OrderedClassifiedsCategory.py:25
+msgid "classifieds_classifiedscategory_categoryimage"
+msgstr ""
+
+#. Default: "Image which represents the category"
+#: collective/classifieds/content/ClassifiedsCategory.py:23
+#: collective/classifieds/content/OrderedClassifiedsCategory.py:29
+msgid "classifieds_classifiedscategory_categoryimage_description"
+msgstr ""
+
+#. Default: "Please enter a valid numeric value"
+#: collective/classifieds/content/Validators.py:41
+msgid "classifieds_invalid_float"
+msgstr ""
+
+#: collective/classifieds/profiles/default/workflows/classifieds_onestate_workflow/definition.xml
+msgid "classifieds_onestate_workflow"
+msgstr ""
+

@@ -77,3 +77,158 @@ msgstr "Imagen de categoría"
 msgid "classifieds_classifiedscategory_categoryimage_description"
 msgstr "Imagen que representa la categoría"
 
+msgid "classifieds_classified_image_description"
+msgstr "Fotografía u otra imagen de los anuncios"
+
+msgid "Classifieds"
+msgstr "Anuncios"
+
+msgid "OrderedClassifieds"
+msgstr "Anuncios (ordenados)"
+
+msgid "ClassifiedsCategory"
+msgstr "Categoría"
+
+msgid "OrderedClassifiedsCategory"
+msgstr "Categoría (ordenada)"
+
+msgid "Classified"
+msgstr "Anuncio"
+
+msgid "classifieds_noresults"
+msgstr "No hay resultados"
+
+msgid "classifieds_search_label"
+msgstr "Buscar"
+
+msgid "classifieds_search_and_subcategories_label"
+msgstr "y subcategorías"
+
+msgid "classifieds_no_image_tile_label"
+msgstr "Imagen no disponible"
+
+msgid "classifieds_allresults_category"
+msgstr "Estos son todos los resultados de esta categoría"
+
+msgid "classifieds_classifieds_view"
+msgstr "Ver"
+
+msgid "classified_author"
+msgstr "autor"
+
+msgid "classifieds_classifieds_email"
+msgstr "Correo"
+
+msgid "classifieds_classifieds"
+msgstr "Anuncios"
+
+msgid "classifieds_you_searched_on"
+msgstr "Usted ha buscado en"
+
+msgid "classifieds_resultsfound"
+msgstr "resultado(s) encontrado(s)"
+
+msgid "classifieds_classifieds_all_created_by"
+msgstr "todos los anuncios creados por"
+
+msgid "classifieds_classifieds_all_created_by_header"
+msgstr "Todos los anuncios creados por"
+
+msgid "classifieds_classifieds_all_created_by_go_back"
+msgstr "Volver atrás"
+
+msgid "classifieds_browse_categories"
+msgstr "Navegar por las categorías"
+
+msgid "classifieds_latest_classifieds"
+msgstr "Últimos anuncios"
+
+msgid "classifieds_view_all_classifieds"
+msgstr "Ver todos los anuncios"
+
+msgid "classifieds_all_classifieds"
+msgstr "Todos los anuncios"
+
+msgid "classifieds_results"
+msgstr "Resultados de la búsqueda"
+
+msgid "classifieds_sorting"
+msgstr "clasificación"
+
+msgid "classifieds_classifieds_label"
+msgstr "Anuncios"
+
+msgid "classifieds_goto"
+msgstr "Ir a"
+
+msgid "classifieds_within"
+msgstr "dentro de "
+
+msgid "classifieds_introtext"
+msgstr "Buscar anuncios dentro de esta categoría, navegar por los anuncios o ir a una categoría específica para ver sus anuncios"
+
+msgid "classifieds_allclassifieds_introtext"
+msgstr "Buscar anuncios o navegar por todos los anuncios"
+
+msgid "classifieds_classifiedsclassified_label_description"
+msgstr "Descripción"
+
+msgid "classifieds_classifiedsclassified_label_image"
+msgstr "Imagen"
+
+msgid "classifieds_classifiedsclassified_label_price"
+msgstr "Precio"
+
+msgid "classifieds_classifiedsclassified_label_classifieds_in_this_category"
+msgstr "Anuncios en esta categoría"
+
+msgid "classifieds_classifiedsclassified_label_categories"
+msgstr "Categorías en"
+
+msgid "classifieds_classifiedsclassified_label_categories_in_this_category"
+msgstr "Categorías dentro de esta categoría"
+
+msgid "classifieds_classifiedscategories_label"
+msgstr "Categorías"
+
+msgid "classifieds_classifiedscategories_image"
+msgstr "Imagen"
+
+msgid "classified_label_placedby"
+msgstr "Anuncio puesto por"
+
+msgid "classifieds_classifiedsclassified_label_placed_at"
+msgstr "en"
+
+msgid "classifieds_label_classifiedscategory"
+msgstr "Categoría"
+
+msgid "classifieds_label_directlink"
+msgstr "Enlace directo"
+
+msgid "classifieds_classified_expired"
+msgstr "Anuncio expirado"
+
+msgid "classifieds_classified_delete"
+msgstr "Eliminar este anuncio"
+
+msgid "classifieds_classified_has_been_deleted"
+msgstr "ha sido eliminado."
+
+msgid "classifieds_invalid_float"
+msgstr "Por favor, introduzca un valor numérico válido"
+
+msgid "classifieds_classifiedscategories_amount_label"
+msgstr "Cantidad"
+
+msgid "marketplace_no_image_tile_label"
+msgstr "Sin imagen"
+
+msgid "classifieds_classified_externalurl"
+msgstr "URL externa"
+
+msgid "classifieds_classified_externalurl_description"
+msgstr "URL externa en la que se puede encontrar más información sobre este anuncio"
+
+msgid "classifieds_label_externalurl"
+msgstr "URL externa"

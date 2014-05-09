@@ -1,7 +1,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
       lang="en"
       metal:use-macro="here/main_template/macros/master"
-      i18n:domain="plone">
+      i18n:domain="collective.classifieds">
     <body>
         <div metal:fill-slot="main"
                  tal:define="results python: view.search();
@@ -155,7 +155,7 @@
                                             Image
                                 </th>
                                 <th tal:condition="python:not context.REQUEST.has_key('frm_searchString')">
-                                    <tal:block i18n:translate="classifieds_classifieds_label">Classified</tal:block>
+                                    <tal:block i18n:translate="">Classified</tal:block>
                                     <a  tal:condition="python:(context.REQUEST.get('sort_order')) != 'reverse' or not context.REQUEST.has_key('sort_order')"
                                              tal:attributes="href string:${here/absolute_url}?sort_order=reverse">
                                         [<tal:block i18n:translate="classifieds_sorting">sort</tal:block>]
@@ -167,7 +167,7 @@
                                 </th>
 
                                 <th tal:condition="python:context.REQUEST.has_key('frm_searchString')">
-                                    <tal:block i18n:translate="classifieds_classifieds_label">Classified</tal:block>
+                                    <tal:block i18n:translate="">Classified</tal:block>
                                     <a tal:condition="python:(context.REQUEST.get('sort_order')) != 'reverse' or not context.REQUEST.has_key('sort_order')"
                                         tal:attributes="href string:${here/absolute_url}?sort_order=reverse&frm_searchString=${request/frm_searchString}">
                                         [<tal:block i18n:translate="classifieds_sorting">sort</tal:block>]

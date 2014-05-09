@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
       lang="en"
       metal:use-macro="here/main_template/macros/master"
-      i18n:domain="plone">
+      i18n:domain="collective.classifieds">
     <body>
         <div metal:fill-slot="main" id="classifieds" tal:define="portal context/@@plone_portal_state/portal;">
             <div tal:replace="structure provider:plone.abovecontenttitle" />

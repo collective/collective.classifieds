@@ -1,7 +1,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
       lang="en"
       metal:use-macro="here/main_template/macros/master"
-      i18n:domain="plone">
+      i18n:domain="collective.classifieds">
 <body>
 
         <div metal:fill-slot="main"
@@ -209,7 +209,7 @@
                                                                                 Image
                                                                         </th>
                                                                         <th>
-                                                                                <tal:block i18n:translate="classifieds_classifiedsclassified_label_classifieds_in_this_category">Classifieds in this category</tal:block>
+                                                                                <tal:block i18n:translate="">Classifieds in this category</tal:block>
                                                                                 <tal:block tal:content="context/Title"></tal:block>
 
                                                                                 <a tal:condition="python:(context.REQUEST.get('sort_order')) != 'reverse' or not context.REQUEST.has_key('sort_order')"
@@ -285,7 +285,7 @@
                                                                 <tal:block i18n:translate="classifieds_classifiedscategories_image">Image</tal:block>
                                                         </th>
                                                         <th>
-                                                                <span i18n:translate="classifieds_classifiedsclassified_label_categories_in_this_category">Categories in this category</span>
+                                                                <span i18n:translate="">Categories in this category</span>
                                                                 <span tal:content="context/Title"></span>
                                                                 <a tal:condition="python:(context.REQUEST.get('sort_category_order')) == 'normal' or not context.REQUEST.has_key('sort_category_order')"
                                                                      tal:attributes="href string:${here/absolute_url}?sort_category_order=reverse&sort_on=sortable_title">

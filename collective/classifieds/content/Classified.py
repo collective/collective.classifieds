@@ -11,18 +11,21 @@ from AccessControl import getSecurityManager
 from Products.CMFCore.utils import getToolByName
 from Products.CMFDynamicViewFTI.browserdefault import BrowserDefaultMixin
 from collective.classifieds.config import *
-
+from collective.classifieds import _
 
 schema = Schema((
     TextField(
         name='description',
         allowable_content_types=('text/plain', 'text/html',),
         widget=RichWidget(
-            label="Description",
-            description="Description of the classified",
-            label_msgid="classifieds_classified_description",
-            description_msgid="classifieds_classified_description_description",
-            i18n_domain='classifieds',
+            label=_(
+                u'classifieds_classified_description',
+                default=u'Description',
+            ),
+            description=_(
+                u'classifieds_classified_description_description',
+                default=u'Description of the classified',
+            ),
         ),
         default_output_type='text/html',
         searchable=True,
@@ -31,11 +34,14 @@ schema = Schema((
     ImageField(
         name='image',
         widget=ImageField._properties['widget'](
-            label="Image",
-            description="Image of the classified",
-            label_msgid="classifieds_classified_image",
-            description_msgid="classifieds_classified_image_description",
-            i18n_domain='classifieds',
+            label=_(
+                u'classifieds_classified_image',
+                default=u'Image',
+            ),
+            description=_(
+                u'classifieds_classified_image_description',
+                default=u'Image of the classified',
+            ),
         ),
         storage=AttributeStorage(),
         max_size=(768, 768),
@@ -51,11 +57,14 @@ schema = Schema((
     ImageField(
         name='additionalimage',
         widget=ImageField._properties['widget'](
-            label="Additional image",
-            description="Additional image of the classified",
-            label_msgid="classifieds_classified_additionalimage",
-            description_msgid="classifieds_classified_additionalimage_desc",
-            i18n_domain='classifieds',
+            label=_(
+                u'classifieds_classified_additionalimage',
+                default=u'Additional image',
+            ),
+            description=_(
+                u'classifieds_classified_additionalimage_desc',
+                default=u'Additional image of the classified',
+            ),
         ),
         storage=AttributeStorage(),
         max_size=(768, 768),
@@ -71,11 +80,14 @@ schema = Schema((
     FloatField(
         name='price',
         widget=DecimalWidget(
-            label="Price",
-            description="Price of the classified",
-            label_msgid="classifieds_classified_price",
-            description_msgid="classifieds_classified_price_description",
-            i18n_domain='classifieds',
+            label=_(
+                u'classifieds_classified_price',
+                default=u'Price',
+            ),
+            description=_(
+                u'classifieds_classified_price_description',
+                default=u'Price of the classified',
+            ),
         ),
         validators=('isFloat',),
         required=False,
@@ -84,12 +96,14 @@ schema = Schema((
     StringField(
         name='externalurl',
         widget=StringWidget(
-            label="External URL",
-            description="External URL to find more information\
-                        about the classified",
-            label_msgid="classifieds_classified_externalurl",
-            description_msgid="classifieds_classified_externalurl_description",
-            i18n_domain='classifieds',
+            label=_(
+                u'classifieds_classified_externalurl',
+                default=u'External URL',
+            ),
+            description=_(
+                u'classifieds_classified_externalurl_description',
+                default=u'External URL to find more information about the classified',
+            ),
         ),
         validators=('isURL',),
         required=False,
