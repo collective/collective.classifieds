@@ -4,7 +4,15 @@ Changelog
 1.7 (unreleased)
 ----------------
 
-- Fix package dependencies.
+- Package classifiers were fixed; package is being tested and should be
+  compatible with Plone 4.0-4.3.
+  [hvelarde]
+
+- The i18n machinery was fixed and the Brazilian Portuguese and Spanish
+  translations were updated.
+  [hvelarde]
+
+- Package dependencies were fixed.
   [hvelarde]
 
 
