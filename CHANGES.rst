@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.7 (unreleased)
+1.7 (2014-05-26)
 ----------------
 
 - Package classifiers were fixed; package is being tested and should be
